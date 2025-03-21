@@ -1,0 +1,116 @@
+﻿[
+  {
+    "Id": 1,
+    "UniversityId": 1,
+    "GroceriesCostPerWeek": "45",
+    "EntertainmentCostPerWeek": "35",
+    "AccommodationCostPerWeek": "115",
+    "NoOfJobsAvailable": "250",
+    "Groceries": {
+      "Accommodations": [
+        {
+          "Name": "St Marks",
+          "UniversityOwned": true,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47
+        },
+        {
+          "Name": "179 High Street",
+          "UniversityOwned": true,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "Name": "Cygnet Warf",
+          "UniversityOwned": true,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47
+        },
+        {
+          "Name": "Valentines Court",
+          "UniversityOwned": true,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47
+        },
+        {
+          "Name": "Lincoln Courts",
+          "UniversityOwned": true,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47
+        },
+        {
+          "Name": "The Gateway",
+          "UniversityOwned": true,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47
+        },
+        {
+          "Name": "IQ Pavilion",
+          "UniversityOwned": false,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47
+        },
+        {
+          "Name": "Park Court",
+          "UniversityOwned": false,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        }
+      ]
+    }
+  },
+  {
+    "Id": 2,
+    "UniversityId": 2,
+    "GroceriesCostPerWeek": "60",
+    "EntertainmentCostPerWeek": "45",
+    "AccommodationCostPerWeek": "150",
+    "NoOfJobsAvailable": "180",
+    "Groceries": {
+      "Accommodations": [
+        {
+          "Name": "Cambridge College Halls",
+          "UniversityOwned": true,
+          "NearestSupermarket": "Waitrose",
+          "AverageSupermarketCost": 35
+        }
+      ]
+    }
+  },
+  {
+    "Id": 3,
+    "UniversityId": 3,
+    "GroceriesCostPerWeek": "55",
+    "EntertainmentCostPerWeek": "50",
+    "AccommodationCostPerWeek": "160",
+    "NoOfJobsAvailable": "200",
+    "Groceries": {
+      "Accommodations": [
+        {
+          "Name": "Oxford College Accommodation",
+          "UniversityOwned": true,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 32
+        }
+      ]
+    }
+  },
+  {
+    "Id": 4,
+    "UniversityId": 4,
+    "GroceriesCostPerWeek": "50",
+    "EntertainmentCostPerWeek": "40",
+    "AccommodationCostPerWeek": "110",
+    "NoOfJobsAvailable": "320",
+    "Groceries": {
+      "Accommodations": [
+        {
+          "Name": "Manchester Halls",
+          "UniversityOwned": true,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 22
+        }
+      ]
+    }
+  }
+]

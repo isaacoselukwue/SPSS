@@ -1,0 +1,285 @@
+﻿@page "/"
+@using System.Text.Json
+@using SPSS.Models
+@inject HttpClient Http
+
+<PageTitle>Student Index - University Cost Comparison</PageTitle>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center mb-5">
+            <h1 class="display-4">University Student Index</h1>
+            <p class="lead">Find and compare university costs in the UK</p>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Search for your university</h2>
+                    <div class="input-group input-group-lg">
+                        <input type="text" class="form-control" placeholder="Start typing university name or city..."
+                               @bind-value="searchTerm" @bind-value:event="oninput" @onkeyup="FilterUniversities">
+                        <button class="btn btn-primary" type="button">
+                            <i class="bi bi-search"></i> Search
+                        </button>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(searchTerm) && filteredUniversities.Count > 0)
+                    {
+                        <div class="list-group mt-2 search-results" style="max-height: 300px; overflow-y: auto;">
+                            @foreach (var university in filteredUniversities)
+                            {
+                                <button type="button" class="list-group-item list-group-item-action"
+                                        @onclick="() => SelectUniversity(university)">
+                                    @university.UniversityName - @university.City
+                                </button>
+                            }
+                        </div>
+                    }
+                    else if (!string.IsNullOrEmpty(searchTerm) && filteredUniversities.Count == 0)
+                    {
+                        <div class="alert alert-info mt-2">
+                            No universities found matching "@searchTerm"
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Duration Selection (only if universities are selected) -->
+    @if (selectedUniversities.Count > 0)
+    {
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h3 class="card-title">Select Duration</h3>
+                        <select class="form-select form-select-lg mb-3" @bind="selectedWeeks">
+                            <option value="44">44 Weeks (Standard Academic Year)</option>
+                            <option value="51">51 Weeks (Full Year)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- University Comparison Section -->
+    @if (selectedUniversities.Count > 0)
+    {
+        <div class="row mb-5">
+            <div class="col-12 mb-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>University Comparison</h2>
+                    @if (selectedUniversities.Count < 3)
+                    {
+                        <button class="btn btn-outline-primary" @onclick="() => isAddingToComparison = true">
+                            <i class="bi bi-plus-lg"></i> Add University to Compare
+                        </button>
+                    }
+                </div>
+            </div>
+
+            <!-- University Cards -->
+            @foreach (var university in selectedUniversities)
+            {
+                <div class="col-md-@(12 / Math.Max(1, Math.Min(selectedUniversities.Count, 3)))">
+                    <div class="card shadow h-100">
+                        <div class="card-header bg-primary text-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="m-0">@university.UniversityName</h5>
+                                <button class="btn btn-sm btn-outline-light" 
+                                @onclick="() => RemoveUniversity(university)">
+                                    <i class="bi bi-x-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Location:</strong> @university.City</p>
+
+                            @if (universityCosts.TryGetValue(university.Id, out var cost))
+                            {
+                                <div class="mb-4">
+                                    <h6 class="border-bottom pb-2">Weekly Expenses</h6>
+                                    <div class="row">
+                                        <div class="col-7">Groceries</div>
+                                        <div class="col-5 text-end fw-bold">
+                                            @FormatCost(GetGroceriesCost(cost))
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-7">Entertainment</div>
+                                        <div class="col-5 text-end fw-bold">
+                                            @FormatCost(cost.EntertainmentCostPerWeek)
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-7">Accommodation</div>
+                                        <div class="col-5 text-end fw-bold">
+                                            @FormatCost(cost.AccommodationCostPerWeek)
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="alert alert-info">
+                                    <div class="row align-items-center">
+                                        <div class="col-7">
+                                            <h6 class="mb-0">Total for @selectedWeeks weeks:</h6>
+                                        </div>
+                                        <div class="col-5 text-end">
+                                            <h5 class="mb-0">£@CalculateTotalCost(cost, selectedWeeks).ToString("N0")</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-3">
+                                    <p class="mb-0"><strong>Available Student Jobs:</strong> @(string.IsNullOrEmpty(cost.NoOfJobsAvailable) ? "Data not available" : cost.NoOfJobsAvailable)</p>
+                                </div>
+
+                                @if (cost.Groceries?.Accommodations?.Count > 0)
+                                {
+                                    <div class="mt-4">
+                                        <h6 class="border-bottom pb-2">Accommodation Details</h6>
+                                        @foreach (var accommodation in cost.Groceries.Accommodations)
+                                        {
+                                            <div class="mb-2">
+                                                <p class="mb-1"><strong>@accommodation.Name</strong> @(accommodation.UniversityOwned ? "(University Owned)" : "")</p>
+                                                <p class="mb-1 small">Nearest supermarket: @accommodation.NearestSupermarket</p>
+                                                <p class="mb-0 small">Average grocery cost: £@accommodation.AverageSupermarketCost/week</p>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="alert alert-warning">
+                                    No cost information available for this university
+                                </div>
+                            }
+                        </div>
+                        <div class="card-footer">
+                            @if (!string.IsNullOrEmpty(university.Url))
+                            {
+                                <a href="@university.Url" target="_blank" class="btn btn-outline-primary w-100">
+                                    Visit University Website
+                                </a>
+                            }
+                            else
+                            {
+                                <button class="btn btn-outline-secondary w-100" disabled>
+                                    No Website Available
+                                </button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@* <footer class="bg-light py-4 mt-5 border-top">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <p class="mb-0 text-muted">
+                    Designed by University of Lincoln SPSS Projects Team 2025
+                </p>
+            </div>
+        </div>
+    </div>
+</footer> *@
+
+@code {
+    private string searchTerm = "";
+    private List<University> allUniversities = new();
+    private List<University> filteredUniversities = new();
+    private List<University> selectedUniversities = new();
+    private Dictionary<int, UniversityCost> universityCosts = new();
+    private int selectedWeeks = 44;
+    private bool isAddingToComparison = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadUniversities();
+        await LoadCosts();
+    }
+
+    private async Task LoadUniversities()
+    {
+        allUniversities = await Http.GetFromJsonAsync<List<University>>("data/universities.json") ?? [];
+    }
+
+    private async Task LoadCosts()
+    {
+        var costs = await Http.GetFromJsonAsync<List<UniversityCost>>("data/costs.json") ?? [];
+        universityCosts = costs.ToDictionary(c => c.UniversityId);
+    }
+
+    private void FilterUniversities()
+    {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            filteredUniversities.Clear();
+            return;
+        }
+
+        filteredUniversities = allUniversities
+            .Where(u => u.UniversityName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                       u.City.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+    }
+
+    private void SelectUniversity(University university)
+    {
+        if (isAddingToComparison)
+        {
+            if (!selectedUniversities.Any(u => u.Id == university.Id) && selectedUniversities.Count < 3)
+            {
+                selectedUniversities.Add(university);
+            }
+            isAddingToComparison = false;
+        }
+        else
+        {
+            selectedUniversities.Clear();
+            selectedUniversities.Add(university);
+        }
+
+        searchTerm = "";
+        filteredUniversities.Clear();
+    }
+
+    private void RemoveUniversity(University university)
+    {
+        selectedUniversities.RemoveAll(u => u.Id == university.Id);
+    }
+
+    private decimal CalculateTotalCost(UniversityCost cost, int weeks)
+    {
+        decimal groceries = decimal.TryParse(cost.GroceriesCostPerWeek, out var g) ? g : 0;
+        decimal entertainment = decimal.TryParse(cost.EntertainmentCostPerWeek, out var e) ? e : 0;
+        decimal accommodation = decimal.TryParse(cost.AccommodationCostPerWeek, out var a) ? a : 0;
+
+        return (groceries + entertainment + accommodation) * weeks;
+    }
+
+    private string FormatCost(string cost)
+    {
+        return string.IsNullOrEmpty(cost) ? "Data not available" : $"£{cost}/week";
+    }
+
+    private string GetGroceriesCost(UniversityCost cost)
+    {
+        if (cost?.Groceries?.Accommodations == null || !cost.Groceries.Accommodations.Any())
+            return cost?.GroceriesCostPerWeek ?? "0.00";
+
+        decimal averageCost = cost.Groceries.Accommodations.Average(a => a.AverageSupermarketCost);
+        return averageCost.ToString("F2");
+    }
+}

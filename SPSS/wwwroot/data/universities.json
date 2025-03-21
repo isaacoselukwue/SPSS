@@ -1,0 +1,140 @@
+﻿[
+  {
+    "Id": 1,
+    "UniversityName": "University of Lincoln",
+    "City": "Lincoln",
+    "Url": "https://www.lincoln.ac.uk"
+  },
+  {
+    "Id": 2,
+    "UniversityName": "Imperial College",
+    "City": "London",
+    "Url": "https://www.imperial.ac.uk"
+  },
+  {
+    "Id": 3,
+    "UniversityName": "King’s College",
+    "City": "London",
+    "Url": "https://www.kcl.ac.uk"
+  },
+  {
+    "Id": 4,
+    "UniversityName": "University of the Arts",
+    "City": "London",
+    "Url": "https://www.arts.ac.uk"
+  },
+  {
+    "Id": 5,
+    "UniversityName": "London South Bank University",
+    "City": "London",
+    "Url": "https://www.lsbu.ac.uk"
+  },
+  {
+    "Id": 6,
+    "UniversityName": "University of Oxford",
+    "City": "Oxford",
+    "Url": "https://www.ox.ac.uk"
+  },
+  {
+    "Id": 7,
+    "UniversityName": "University of Southampton",
+    "City": "Southampton",
+    "Url": "https://www.southampton.ac.uk"
+  },
+  {
+    "Id": 8,
+    "UniversityName": "University of Manchester",
+    "City": "Manchester",
+    "Url": "https://www.manchester.ac.uk"
+  },
+  {
+    "Id": 9,
+    "UniversityName": "Manchester Metropolitan University",
+    "City": "Manchester",
+    "Url": "https://www.mmu.ac.uk"
+  },
+  {
+    "Id": 10,
+    "UniversityName": "University of Liverpool",
+    "City": "Liverpool",
+    "Url": "https://www.liverpool.ac.uk"
+  },
+  {
+    "Id": 11,
+    "UniversityName": "Liverpool John Moores University",
+    "City": "Liverpool",
+    "Url": "https://www.ljmu.ac.uk"
+  },
+  {
+    "Id": 12,
+    "UniversityName": "Coventry University",
+    "City": "Coventry",
+    "Url": "https://www.coventry.ac.uk"
+  },
+  {
+    "Id": 13,
+    "UniversityName": "University of Birmingham",
+    "City": "Birmingham",
+    "Url": "https://www.birmingham.ac.uk"
+  },
+  {
+    "Id": 14,
+    "UniversityName": "University College Birmingham",
+    "City": "Birmingham",
+    "Url": "https://www.ucb.ac.uk"
+  },
+  {
+    "Id": 15,
+    "UniversityName": "Birmingham City University",
+    "City": "Birmingham",
+    "Url": "https://www.bcu.ac.uk"
+  },
+  {
+    "Id": 16,
+    "UniversityName": "University of York",
+    "City": "York",
+    "Url": "https://www.york.ac.uk"
+  },
+  {
+    "Id": 17,
+    "UniversityName": "York St. John University",
+    "City": "York",
+    "Url": "https://www.yorksj.ac.uk"
+  },
+  {
+    "Id": 18,
+    "UniversityName": "University of Plymouth",
+    "City": "Plymouth",
+    "Url": "https://www.plymouth.ac.uk"
+  },
+  {
+    "Id": 19,
+    "UniversityName": "Plymouth Marjon University",
+    "City": "Plymouth",
+    "Url": "https://www.marjon.ac.uk"
+  },
+  {
+    "Id": 20,
+    "UniversityName": "University of East Anglia",
+    "City": "Norwich",
+    "Url": "https://www.uea.ac.uk"
+  },
+  {
+    "Id": 21,
+    "UniversityName": "Newcastle University",
+    "City": "Newcastle",
+    "Url": "https://www.ncl.ac.uk"
+  },
+  {
+    "Id": 22,
+    "UniversityName": "Cardiff University",
+    "City": "Cardiff",
+    "Url": "https://www.cardiff.ac.uk"
+  },
+  {
+    "Id": 23,
+    "UniversityName": "University of Edinburgh",
+    "City": "Edinburgh",
+    "Url": "https://www.ed.ac.uk"
+  }
+]
