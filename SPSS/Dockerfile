@@ -7,14 +7,12 @@ RUN dotnet restore "./SPSS.csproj"
 COPY . .
 RUN dotnet publish "SPSS/SPSS.csproj" -c Release -o /app/publish
 
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
-WORKDIR /app
+FROM nginx:alpine AS final
+WORKDIR /usr/share/nginx/html
 
-COPY --from=build /app/publish .
+RUN rm -rf ./*
 
-ENV ASPNETCORE_ENVIRONMENT=Production
-ENV ASPNETCORE_URLS=http://+:8080
+COPY --from=build /app/publish/wwwroot .
 
-EXPOSE 8080
-
-ENTRYPOINT ["dotnet", "SPSS.dll"]
+EXPOSE 80
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
