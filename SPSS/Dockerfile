@@ -1,14 +1,16 @@
-﻿FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+﻿# Stage 1: Build
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-COPY ["SPSS.csproj", "./"]
+COPY ["SPSS/SPSS.csproj", "./"]
 RUN dotnet restore "./SPSS.csproj"
 
 COPY . .
-RUN dotnet publish "SPSS.csproj" -c Release -o /app/publish
+RUN dotnet publish "SPSS/SPSS.csproj" -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
+
 COPY --from=build /app/publish .
 
 ENV ASPNETCORE_ENVIRONMENT=Production
