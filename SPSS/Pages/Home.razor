@@ -13,7 +13,6 @@
         </div>
     </div>
 
-    <!-- Search Section -->
     <div class="row justify-content-center mb-5">
         <div class="col-md-8">
             <div class="card shadow">
@@ -21,7 +20,7 @@
                     <h2 class="card-title text-center mb-4">Search for your university</h2>
                     <div class="input-group input-group-lg">
                         <input type="text" class="form-control" placeholder="Start typing university name or city..."
-                               @bind-value="searchTerm" @bind-value:event="oninput" @onkeyup="FilterUniversities">
+                                @bind-value="searchTerm" @bind-value:event="oninput" @onkeyup="FilterUniversities">
                         <button class="btn btn-primary" type="button">
                             <i class="bi bi-search"></i> Search
                         </button>
@@ -34,7 +33,7 @@
                             {
                                 <button type="button" class="list-group-item list-group-item-action"
                                         @onclick="() => SelectUniversity(university)">
-                                    @university.UniversityName - @university.City
+                                    @university.UniversityName - @GetCityName(university.CityId)
                                 </button>
                             }
                         </div>
@@ -50,7 +49,6 @@
         </div>
     </div>
 
-    <!-- Duration Selection (only if universities are selected) -->
     @if (selectedUniversities.Count > 0)
     {
         <div class="row justify-content-center mb-4">
@@ -68,7 +66,6 @@
         </div>
     }
 
-    <!-- University Comparison Section -->
     @if (selectedUniversities.Count > 0)
     {
         <div class="row mb-5">
@@ -84,7 +81,6 @@
                 </div>
             </div>
 
-            <!-- University Cards -->
             @foreach (var university in selectedUniversities)
             {
                 <div class="col-md-@(12 / Math.Max(1, Math.Min(selectedUniversities.Count, 3)))">
@@ -92,16 +88,17 @@
                         <div class="card-header bg-primary text-white">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5 class="m-0">@university.UniversityName</h5>
-                                <button class="btn btn-sm btn-outline-light" 
-                                @onclick="() => RemoveUniversity(university)">
+                                <button class="btn btn-sm btn-outline-light"
+                                        @onclick="() => RemoveUniversity(university)">
                                     <i class="bi bi-x-lg"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="card-body">
-                            <p><strong>Location:</strong> @university.City</p>
+                            <p><strong>Location:</strong> @GetCityName(university.CityId)</p>
 
-                            @if (universityCosts.TryGetValue(university.Id, out var cost))
+                            @if (universityCosts.TryGetValue(university.Id, out var cost) &&
+                            citiesById.TryGetValue(university.CityId, out var city))
                             {
                                 <div class="mb-4">
                                     <h6 class="border-bottom pb-2">Weekly Expenses</h6>
@@ -114,7 +111,7 @@
                                     <div class="row">
                                         <div class="col-7">Entertainment</div>
                                         <div class="col-5 text-end fw-bold">
-                                            @FormatCost(cost.EntertainmentCostPerWeek)
+                                            @FormatCost(GetEntertainmentCost(city))
                                         </div>
                                     </div>
                                     <div class="row">
@@ -131,13 +128,15 @@
                                             <h6 class="mb-0">Total for @selectedWeeks weeks:</h6>
                                         </div>
                                         <div class="col-5 text-end">
-                                            <h5 class="mb-0">£@CalculateTotalCost(cost, selectedWeeks).ToString("N0")</h5>
+                                            <h5 class="mb-0">£@CalculateTotalCost(cost, city, selectedWeeks).ToString("N0")</h5>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="mt-3">
-                                    <p class="mb-0"><strong>Available Student Jobs:</strong> @(string.IsNullOrEmpty(cost.NoOfJobsAvailable) ? "Data not available" : cost.NoOfJobsAvailable)</p>
+                                    <p class="mb-0"><strong>Available Student Jobs:</strong> @(city.Jobs?.PartTimeJobPostings ?? "Data not available")</p>
+                                    <p class="mb-0"><strong>Median Wage:</strong> £@(city.Jobs?.MedianWage ?? 0)/hour</p>
+                                    <p class="mb-0"><strong>Employment Rate:</strong> @(((city.Jobs?.EmploymentRate ?? 0) * 100).ToString("F0"))%</p>
                                 </div>
 
                                 @if (cost.Groceries?.Accommodations?.Count > 0)
@@ -183,21 +182,11 @@
     }
 </div>
 
-@* <footer class="bg-light py-4 mt-5 border-top">
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <p class="mb-0 text-muted">
-                    Designed by University of Lincoln SPSS Projects Team 2025
-                </p>
-            </div>
-        </div>
-    </div>
-</footer> *@
-
 @code {
-    private string searchTerm = "";
+    private string searchTerm = string.Empty;
     private List<University> allUniversities = new();
+    private List<City> allCities = new();
+    private Dictionary<int, City> citiesById = new();
     private List<University> filteredUniversities = new();
     private List<University> selectedUniversities = new();
     private Dictionary<int, UniversityCost> universityCosts = new();
@@ -206,8 +195,15 @@
 
     protected override async Task OnInitializedAsync()
     {
+        await LoadCities();
         await LoadUniversities();
         await LoadCosts();
+    }
+
+    private async Task LoadCities()
+    {
+        allCities = await Http.GetFromJsonAsync<List<City>>("data/cities.json") ?? [];
+        citiesById = allCities.ToDictionary(c => c.Id);
     }
 
     private async Task LoadUniversities()
@@ -231,8 +227,13 @@
 
         filteredUniversities = allUniversities
             .Where(u => u.UniversityName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                       u.City.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                      GetCityName(u.CityId).Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
             .ToList();
+    }
+
+    private string GetCityName(int cityId)
+    {
+        return citiesById.TryGetValue(cityId, out var city) ? city.CityName : "Unknown";
     }
 
     private void SelectUniversity(University university)
@@ -251,7 +252,7 @@
             selectedUniversities.Add(university);
         }
 
-        searchTerm = "";
+        searchTerm = string.Empty;
         filteredUniversities.Clear();
     }
 
@@ -260,10 +261,29 @@
         selectedUniversities.RemoveAll(u => u.Id == university.Id);
     }
 
-    private decimal CalculateTotalCost(UniversityCost cost, int weeks)
+    private string GetGroceriesCost(UniversityCost cost)
     {
-        decimal groceries = decimal.TryParse(cost.GroceriesCostPerWeek, out var g) ? g : 0;
-        decimal entertainment = decimal.TryParse(cost.EntertainmentCostPerWeek, out var e) ? e : 0;
+        if (cost?.Groceries?.Accommodations == null || !cost.Groceries.Accommodations.Any())
+            return "0.00";
+
+        decimal averageCost = cost.Groceries.Accommodations.Average(a => a.AverageSupermarketCost);
+        return averageCost.ToString("F2");
+    }
+
+    private string GetEntertainmentCost(City city)
+    {
+        if (city?.Entertainment == null)
+            return "0.00";
+
+        decimal total = city.Entertainment.GoingOut + city.Entertainment.HealthAndWellness + city.Entertainment.HolidayAndEvents;
+        return total.ToString("F2");
+    }
+
+    private decimal CalculateTotalCost(UniversityCost cost, City city, int weeks)
+    {
+        decimal groceries = decimal.TryParse(GetGroceriesCost(cost), out var g) ? g : 0;
+        decimal entertainment = city?.Entertainment != null ?
+            (city.Entertainment.GoingOut + city.Entertainment.HealthAndWellness + city.Entertainment.HolidayAndEvents) : 0;
         decimal accommodation = decimal.TryParse(cost.AccommodationCostPerWeek, out var a) ? a : 0;
 
         return (groceries + entertainment + accommodation) * weeks;
@@ -272,14 +292,5 @@
     private string FormatCost(string cost)
     {
         return string.IsNullOrEmpty(cost) ? "Data not available" : $"£{cost}/week";
-    }
-
-    private string GetGroceriesCost(UniversityCost cost)
-    {
-        if (cost?.Groceries?.Accommodations == null || !cost.Groceries.Accommodations.Any())
-            return cost?.GroceriesCostPerWeek ?? "0.00";
-
-        decimal averageCost = cost.Groceries.Accommodations.Average(a => a.AverageSupermarketCost);
-        return averageCost.ToString("F2");
     }
 }

@@ -3,19 +3,19 @@
 public class University
 {
     public int Id { get; set; }
-    public string UniversityName { get; set; } = "";
-    public string Url { get; set; } = "";
-    public string City { get; set; } = "";
+    public string UniversityName { get; set; } = string.Empty;
+    public int CityId { get; set; }
+    public string Url { get; set; } = string.Empty;
 }
 
 public class UniversityCost
 {
     public int Id { get; set; }
     public int UniversityId { get; set; }
-    public string GroceriesCostPerWeek { get; set; } = "";
-    public string NoOfJobsAvailable { get; set; } = "";
-    public string EntertainmentCostPerWeek { get; set; } = "";
-    public string AccommodationCostPerWeek { get; set; } = "";
+    public string AccommodationCostPerWeek { get; set; } = string.Empty;
+    public string NoOfJobsAvailable { get; set; } = string.Empty;
+    public string EntertainmentCostPerWeek { get; set; } = string.Empty;
+    public string GroceriesCostPerWeek { get; set; } = string.Empty;
     public GroceriesInfo? Groceries { get; set; }
 }
 
@@ -26,8 +26,31 @@ public class GroceriesInfo
 
 public class AccommodationInfo
 {
-    public string Name { get; set; } = "";
+    public string Name { get; set; } = string.Empty;
     public bool UniversityOwned { get; set; }
-    public string NearestSupermarket { get; set; } = "";
+    public string NearestSupermarket { get; set; } = string.Empty;
     public decimal AverageSupermarketCost { get; set; }
+}
+
+public class City
+{
+    public int Id { get; set; }
+    public string CityName { get; set; } = string.Empty;
+    public JobsInfo? Jobs { get; set; }
+    public EntertainmentInfo? Entertainment { get; set; }
+}
+
+public class JobsInfo
+{
+    public decimal MedianWage { get; set; }
+    public decimal EmploymentRate { get; set; }
+    public decimal UnemploymentRate { get; set; }
+    public string PartTimeJobPostings { get; set; } = string.Empty;
+}
+
+public class EntertainmentInfo
+{
+    public decimal GoingOut { get; set; }
+    public decimal HealthAndWellness { get; set; }
+    public decimal HolidayAndEvents { get; set; }
 }

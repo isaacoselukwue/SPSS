@@ -1,0 +1,212 @@
+﻿[
+  {
+    "Id": 1,
+    "CityName": "Lincoln",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 2,
+    "CityName": "London",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 3,
+    "CityName": "Oxford",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 4,
+    "CityName": "Southampton",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 5,
+    "CityName": "Manchester",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 6,
+    "CityName": "Liverpool",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 7,
+    "CityName": "Coventry",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 8,
+    "CityName": "Birmingham",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 9,
+    "CityName": "York",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 10,
+    "CityName": "Plymouth",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 11,
+    "CityName": "Norwich",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 12,
+    "CityName": "Newcastle",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 13,
+    "CityName": "Cardiff",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  },
+  {
+    "Id": 14,
+    "CityName": "Edinburgh",
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200+"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    }
+  }
+]

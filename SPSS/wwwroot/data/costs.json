@@ -2,10 +2,7 @@
   {
     "Id": 1,
     "UniversityId": 1,
-    "GroceriesCostPerWeek": "45",
-    "EntertainmentCostPerWeek": "35",
     "AccommodationCostPerWeek": "115",
-    "NoOfJobsAvailable": "250",
     "Groceries": {
       "Accommodations": [
         {
@@ -62,10 +59,7 @@
   {
     "Id": 2,
     "UniversityId": 2,
-    "GroceriesCostPerWeek": "60",
-    "EntertainmentCostPerWeek": "45",
-    "AccommodationCostPerWeek": "150",
-    "NoOfJobsAvailable": "180",
+    "AccommodationCostPerWeek": "45",
     "Groceries": {
       "Accommodations": [
         {
@@ -80,10 +74,7 @@
   {
     "Id": 3,
     "UniversityId": 3,
-    "GroceriesCostPerWeek": "55",
-    "EntertainmentCostPerWeek": "50",
     "AccommodationCostPerWeek": "160",
-    "NoOfJobsAvailable": "200",
     "Groceries": {
       "Accommodations": [
         {
@@ -98,10 +89,7 @@
   {
     "Id": 4,
     "UniversityId": 4,
-    "GroceriesCostPerWeek": "50",
-    "EntertainmentCostPerWeek": "40",
     "AccommodationCostPerWeek": "110",
-    "NoOfJobsAvailable": "320",
     "Groceries": {
       "Accommodations": [
         {
