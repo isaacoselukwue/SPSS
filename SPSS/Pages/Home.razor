@@ -97,15 +97,14 @@
                         <div class="card-body">
                             <p><strong>Location:</strong> @GetCityName(university.CityId)</p>
 
-                            @if (universityCosts.TryGetValue(university.Id, out var cost) &&
-                            citiesById.TryGetValue(university.CityId, out var city))
+                            @if (citiesById.TryGetValue(university.CityId, out var city))
                             {
                                 <div class="mb-4">
                                     <h6 class="border-bottom pb-2">Weekly Expenses</h6>
                                     <div class="row">
                                         <div class="col-7">Groceries</div>
                                         <div class="col-5 text-end fw-bold">
-                                            @FormatCost(GetGroceriesCost(cost))
+                                            @FormatCost(GetGroceriesCost(university, city))
                                         </div>
                                     </div>
                                     <div class="row">
@@ -117,7 +116,7 @@
                                     <div class="row">
                                         <div class="col-7">Accommodation</div>
                                         <div class="col-5 text-end fw-bold">
-                                            @FormatCost(cost.AccommodationCostPerWeek)
+                                            @FormatCost(GetAccommodationCost(university, city))
                                         </div>
                                     </div>
                                 </div>
@@ -128,7 +127,7 @@
                                             <h6 class="mb-0">Total for @selectedWeeks weeks:</h6>
                                         </div>
                                         <div class="col-5 text-end">
-                                            <h5 class="mb-0">£@CalculateTotalCost(cost, city, selectedWeeks).ToString("N0")</h5>
+                                            <h5 class="mb-0">£@CalculateTotalCost(university, city, selectedWeeks).ToString("N0")</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -139,14 +138,14 @@
                                     <p class="mb-0"><strong>Employment Rate:</strong> @(((city.Jobs?.EmploymentRate ?? 0) * 100).ToString("F0"))%</p>
                                 </div>
 
-                                @if (cost.Groceries?.Accommodations?.Count > 0)
+                                @if (GetRelevantAccommodations(university, city).Any())
                                 {
                                     <div class="mt-4">
                                         <h6 class="border-bottom pb-2">Accommodation Details</h6>
-                                        @foreach (var accommodation in cost.Groceries.Accommodations)
+                                        @foreach (var accommodation in GetRelevantAccommodations(university, city))
                                         {
                                             <div class="mb-2">
-                                                <p class="mb-1"><strong>@accommodation.Name</strong> @(accommodation.UniversityOwned ? "(University Owned)" : "")</p>
+                                                <p class="mb-1"><strong>@accommodation.Name</strong> @(accommodation.UniversityOwned ? "(University Owned)" : "(Private)")</p>
                                                 <p class="mb-1 small">Nearest supermarket: @accommodation.NearestSupermarket</p>
                                                 <p class="mb-0 small">Average grocery cost: £@accommodation.AverageSupermarketCost/week</p>
                                             </div>
@@ -189,7 +188,6 @@
     private Dictionary<int, City> citiesById = new();
     private List<University> filteredUniversities = new();
     private List<University> selectedUniversities = new();
-    private Dictionary<int, UniversityCost> universityCosts = new();
     private int selectedWeeks = 44;
     private bool isAddingToComparison = false;
 
@@ -197,7 +195,6 @@
     {
         await LoadCities();
         await LoadUniversities();
-        await LoadCosts();
     }
 
     private async Task LoadCities()
@@ -209,12 +206,6 @@
     private async Task LoadUniversities()
     {
         allUniversities = await Http.GetFromJsonAsync<List<University>>("data/universities.json") ?? [];
-    }
-
-    private async Task LoadCosts()
-    {
-        var costs = await Http.GetFromJsonAsync<List<UniversityCost>>("data/costs.json") ?? [];
-        universityCosts = costs.ToDictionary(c => c.UniversityId);
     }
 
     private void FilterUniversities()
@@ -261,13 +252,39 @@
         selectedUniversities.RemoveAll(u => u.Id == university.Id);
     }
 
-    private string GetGroceriesCost(UniversityCost cost)
+    private List<AccommodationInfo> GetRelevantAccommodations(University university, City city)
     {
-        if (cost?.Groceries?.Accommodations == null || !cost.Groceries.Accommodations.Any())
+        if (city?.Groceries?.Accommodations is null)
+            return new List<AccommodationInfo>();
+
+        return city.Groceries.Accommodations
+            .Where(a => !a.UniversityOwned || (a.UniversityOwned && a.UniversityId == university.Id))
+            .ToList();
+    }
+
+    private string GetGroceriesCost(University university, City city)
+    {
+        var accommodations = GetRelevantAccommodations(university, city);
+        if (!accommodations.Any())
             return "0.00";
 
-        decimal averageCost = cost.Groceries.Accommodations.Average(a => a.AverageSupermarketCost);
+        decimal averageCost = accommodations.Average(a => a.AverageSupermarketCost);
         return averageCost.ToString("F2");
+    }
+
+    private string GetAccommodationCost(University university, City city)
+    {
+        var accommodations = GetRelevantAccommodations(university, city);
+        if (!accommodations.Any())
+            return "0.00";
+
+        var uniOwned = accommodations.Where(a => a.UniversityOwned).ToList();
+        if (uniOwned.Any())
+        {
+            return uniOwned.Average(a => a.AccommodationCostPerWeek).ToString("F2");
+        }
+        
+        return accommodations.Average(a => a.AccommodationCostPerWeek).ToString("F2");
     }
 
     private string GetEntertainmentCost(City city)
@@ -275,16 +292,19 @@
         if (city?.Entertainment == null)
             return "0.00";
 
-        decimal total = city.Entertainment.GoingOut + city.Entertainment.HealthAndWellness + city.Entertainment.HolidayAndEvents;
+        decimal total = 0;
+        if (city.Entertainment.GoingOut > 0) total += city.Entertainment.GoingOut;
+        if (city.Entertainment.HealthAndWellness > 0) total += city.Entertainment.HealthAndWellness;
+        if (city.Entertainment.HolidayAndEvents > 0) total += city.Entertainment.HolidayAndEvents;
+        
         return total.ToString("F2");
     }
 
-    private decimal CalculateTotalCost(UniversityCost cost, City city, int weeks)
+    private decimal CalculateTotalCost(University university, City city, int weeks)
     {
-        decimal groceries = decimal.TryParse(GetGroceriesCost(cost), out var g) ? g : 0;
-        decimal entertainment = city?.Entertainment != null ?
-            (city.Entertainment.GoingOut + city.Entertainment.HealthAndWellness + city.Entertainment.HolidayAndEvents) : 0;
-        decimal accommodation = decimal.TryParse(cost.AccommodationCostPerWeek, out var a) ? a : 0;
+        decimal groceries = decimal.TryParse(GetGroceriesCost(university, city), out var g) ? g : 0;
+        decimal entertainment = decimal.TryParse(GetEntertainmentCost(city), out var e) ? e : 0;
+        decimal accommodation = decimal.TryParse(GetAccommodationCost(university, city), out var a) ? a : 0;
 
         return (groceries + entertainment + accommodation) * weeks;
     }

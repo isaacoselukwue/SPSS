@@ -12,7 +12,76 @@
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "Name": "St Marks",
+          "UniversityOwned": true,
+          "UniversityId": 1,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47,
+          "AccommodationCostPerWeek": 175
+        },
+        {
+          "Name": "179 High Street",
+          "UniversityOwned": true,
+          "UniversityId": 1,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73,
+          "AccommodationCostPerWeek": 200
+        },
+        {
+          "Name": "Cygnet Warf",
+          "UniversityOwned": true,
+          "UniversityId": 1,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47,
+          "AccommodationCostPerWeek": 175
+        },
+        {
+          "Name": "Valentines Court",
+          "UniversityOwned": true,
+          "UniversityId": 1,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47,
+          "AccommodationCostPerWeek": 175
+        },
+        {
+          "Name": "Lincoln Courts",
+          "UniversityOwned": true,
+          "UniversityId": 1,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47,
+          "AccommodationCostPerWeek": 175
+        },
+        {
+          "Name": "The Gateway",
+          "UniversityOwned": true,
+          "UniversityId": 1,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47,
+          "AccommodationCostPerWeek": 175
+        },
+        {
+          "Name": "IQ Pavilion",
+          "UniversityOwned": false,
+          "UniversityId": 0,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47,
+          "AccommodationCostPerWeek": 175
+        },
+        {
+          "Name": "Park Court",
+          "UniversityOwned": false,
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73,
+          "AccommodationCostPerWeek": 200
+        }
+      ]
     }
+
   },
   {
     "Id": 2,
@@ -27,6 +96,34 @@
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "Name": "Beit Hall",
+          "UniversityOwned": true,
+          "UniversityId": 2,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87,
+          "AccommodationCostPerWeek": 200
+        },
+        {
+          "Name": "Southside Halls",
+          "UniversityOwned": true,
+          "UniversityId": 2,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87,
+          "AccommodationCostPerWeek": 250
+        },
+        {
+          "Name": "Depot Point",
+          "UniversityOwned": false,
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73,
+          "AccommodationCostPerWeek": 200
+        }
+      ]
     }
   },
   {
@@ -42,6 +139,18 @@
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "Name": "Oxford College Accommodation",
+          "UniversityOwned": true,
+          "UniversityId": 6,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 32,
+          "AccommodationCostPerWeek": 200
+        }
+      ]
     }
   },
   {
@@ -72,6 +181,17 @@
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "Name": "Manchester Halls",
+          "UniversityOwned": true,
+          "UniversityId": 8,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 22
+        }
+      ]
     }
   },
   {

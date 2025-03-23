@@ -8,17 +8,6 @@ public class University
     public string Url { get; set; } = string.Empty;
 }
 
-public class UniversityCost
-{
-    public int Id { get; set; }
-    public int UniversityId { get; set; }
-    public string AccommodationCostPerWeek { get; set; } = string.Empty;
-    public string NoOfJobsAvailable { get; set; } = string.Empty;
-    public string EntertainmentCostPerWeek { get; set; } = string.Empty;
-    public string GroceriesCostPerWeek { get; set; } = string.Empty;
-    public GroceriesInfo? Groceries { get; set; }
-}
-
 public class GroceriesInfo
 {
     public List<AccommodationInfo>? Accommodations { get; set; }
@@ -28,8 +17,10 @@ public class AccommodationInfo
 {
     public string Name { get; set; } = string.Empty;
     public bool UniversityOwned { get; set; }
+    public int UniversityId { get; set; }
     public string NearestSupermarket { get; set; } = string.Empty;
     public decimal AverageSupermarketCost { get; set; }
+    public decimal AccommodationCostPerWeek { get; set; }
 }
 
 public class City
@@ -38,6 +29,7 @@ public class City
     public string CityName { get; set; } = string.Empty;
     public JobsInfo? Jobs { get; set; }
     public EntertainmentInfo? Entertainment { get; set; }
+    public GroceriesInfo? Groceries { get; set; }
 }
 
 public class JobsInfo

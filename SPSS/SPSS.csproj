@@ -17,9 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\data\costs.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Update="wwwroot\data\universities.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
