@@ -3,13 +3,13 @@
 @using SPSS.Models
 @inject HttpClient Http
 
-<PageTitle>Student Index - University Cost Comparison</PageTitle>
+<PageTitle>Student Index - University Cities Cost Comparison</PageTitle>
 
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-12 text-center mb-5">
             <h1 class="display-4">University Student Index</h1>
-            <p class="lead">Find and compare university costs in the UK</p>
+            <p class="lead">Find and compare university city costs in the UK</p>
         </div>
     </div>
 
@@ -17,168 +17,302 @@
         <div class="col-md-8">
             <div class="card shadow">
                 <div class="card-body">
-                    <h2 class="card-title text-center mb-4">Search for your university</h2>
+                    <h2 class="card-title text-center mb-4">Search for your city</h2>
+
                     <div class="input-group input-group-lg">
-                        <input type="text" class="form-control" placeholder="Start typing university name or city..."
-                                @bind-value="searchTerm" @bind-value:event="oninput" @onkeyup="FilterUniversities">
-                        <button class="btn btn-primary" type="button">
-                            <i class="bi bi-search"></i> Search
-                        </button>
+                        <input type="text" class="form-control" placeholder="Start typing city name..." @bind-value="searchTerm" @bind-value:event="oninput" @onkeyup="FilterCities">
+
+                        <button class="btn btn-primary" type="button"> <i class="bi bi-search"></i> Search </button>
                     </div>
 
-                    @if (!string.IsNullOrEmpty(searchTerm) && filteredUniversities.Count > 0)
+                    @if (!string.IsNullOrEmpty(searchTerm) && filteredCities.Count > 0)
                     {
                         <div class="list-group mt-2 search-results" style="max-height: 300px; overflow-y: auto;">
-                            @foreach (var university in filteredUniversities)
+                            @foreach (var city in filteredCities)
                             {
-                                <button type="button" class="list-group-item list-group-item-action"
-                                        @onclick="() => SelectUniversity(university)">
-                                    @university.UniversityName - @GetCityName(university.CityId)
+                                <button type="button" class="list-group-item list-group-item-action" @onclick="() => SelectCity(city)">
+                                    @city.CityName
                                 </button>
                             }
                         </div>
                     }
-                    else if (!string.IsNullOrEmpty(searchTerm) && filteredUniversities.Count == 0)
+                    else if (!string.IsNullOrEmpty(searchTerm) && filteredCities.Count == 0)
                     {
                         <div class="alert alert-info mt-2">
-                            No universities found matching "@searchTerm"
+                            No cities found matching "@searchTerm"
                         </div>
                     }
                 </div>
             </div>
         </div>
-    </div>
 
-    @if (selectedUniversities.Count > 0)
-    {
-        <div class="row justify-content-center mb-4">
-            <div class="col-md-6">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <h3 class="card-title">Select Duration</h3>
-                        <select class="form-select form-select-lg mb-3" @bind="selectedWeeks">
-                            <option value="44">44 Weeks (Standard Academic Year)</option>
-                            <option value="51">51 Weeks (Full Year)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
-
-    @if (selectedUniversities.Count > 0)
-    {
-        <div class="row mb-5">
-            <div class="col-12 mb-4">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h2>University Comparison</h2>
-                    @if (selectedUniversities.Count < 3)
-                    {
-                        <button class="btn btn-outline-primary" @onclick="() => isAddingToComparison = true">
-                            <i class="bi bi-plus-lg"></i> Add University to Compare
-                        </button>
-                    }
-                </div>
-            </div>
-
-            @foreach (var university in selectedUniversities)
-            {
-                <div class="col-md-@(12 / Math.Max(1, Math.Min(selectedUniversities.Count, 3)))">
-                    <div class="card shadow h-100">
+        @if (selectedCity != null && !cityComparisonMode)
+        {
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card shadow">
                         <div class="card-header bg-primary text-white">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="m-0">@university.UniversityName</h5>
-                                <button class="btn btn-sm btn-outline-light"
-                                        @onclick="() => RemoveUniversity(university)">
-                                    <i class="bi bi-x-lg"></i>
-                                </button>
+                                <h3 class="m-0">@selectedCity.CityName - Weekly Expenses Summary</h3>
+                                <div>
+                                    <button class="btn btn-sm btn-outline-light me-2" @onclick="() => AddToComparison(selectedCity)">
+                                        <i class="bi bi-bar-chart"></i> Compare with other cities
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-light" @onclick="ClearSelection">
+                                        <i class="bi bi-x-lg"></i> Close
+                                    </button>
+                                </div>
                             </div>
                         </div>
+                        
                         <div class="card-body">
-                            <p><strong>Location:</strong> @GetCityName(university.CityId)</p>
-
-                            @if (citiesById.TryGetValue(university.CityId, out var city))
+                            @if (selectedCity.Accommodations is not null)
                             {
-                                <div class="mb-4">
-                                    <h6 class="border-bottom pb-2">Weekly Expenses</h6>
-                                    <div class="row">
-                                        <div class="col-7">Groceries</div>
-                                        <div class="col-5 text-end fw-bold">
-                                            @FormatCost(GetGroceriesCost(university, city))
+                                <h4 class="border-bottom pb-2">Accommodation</h4>
+                                @if (selectedCity.Accommodations.Halls is not null && selectedCity.Accommodations.Halls.Any())
+                                {
+                                    <div class="mb-4">
+                                        <h5>Halls</h5>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <p><strong>Average Rating:</strong> @GetAverageHallRating(selectedCity).ToString("F2")</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <p><strong>Average Price:</strong> £@GetAverageHallPrice(selectedCity).ToString("F2")/week</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <p><strong>Average Value for Money:</strong> @GetAverageHallValueForMoney(selectedCity).ToString("F4")</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-7">Entertainment</div>
-                                        <div class="col-5 text-end fw-bold">
-                                            @FormatCost(GetEntertainmentCost(city))
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-7">Accommodation</div>
-                                        <div class="col-5 text-end fw-bold">
-                                            @FormatCost(GetAccommodationCost(university, city))
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="alert alert-info">
-                                    <div class="row align-items-center">
-                                        <div class="col-7">
-                                            <h6 class="mb-0">Total for @selectedWeeks weeks:</h6>
-                                        </div>
-                                        <div class="col-5 text-end">
-                                            <h5 class="mb-0">£@CalculateTotalCost(university, city, selectedWeeks).ToString("N0")</h5>
-                                        </div>
+                                        <button class="btn btn-outline-primary mt-2" @onclick="ToggleHallsVisibility">
+                                            @(showHalls ? "Hide Halls" : "View Halls")
+                                        </button>
+
+                                        @if (showHalls)
+                                        {
+                                            <div class="mt-3">
+                                                <div class="mb-3 row">
+                                                    <div class="col-md-6">
+                                                        <input type="text" class="form-control" placeholder="Filter halls by name" @bind-value="hallFilter" @bind-value:event="oninput">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">Sort By</span>
+                                                            <select class="form-select" @bind="hallSortOption">
+                                                                <option value="name_asc">Name (A-Z)</option>
+                                                                <option value="name_desc">Name (Z-A)</option>
+                                                                <option value="rating_asc">Rating (Low to High)</option>
+                                                                <option value="rating_desc">Rating (High to Low)</option>
+                                                                <option value="price_asc">Price (Low to High)</option>
+                                                                <option value="price_desc">Price (High to Low)</option>
+                                                                <option value="value_asc">Value for Money (Low to High)</option>
+                                                                <option value="value_desc">Value for Money (High to Low)</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Name</th>
+                                                                <th>Price (£/week)</th>
+                                                                <th>Rating</th>
+                                                                <th>Value for Money</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach (var hall in GetFilteredAndSortedHalls())
+                                                            {
+                                                                <tr>
+                                                                    <td>@hall.Name</td>
+                                                                    <td>£@hall.Price</td>
+                                                                    <td>@hall.Ratings</td>
+                                                                    <td>@CalculateValueForMoney(hall).ToString("F4")</td>
+                                                                </tr>
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        }
                                     </div>
-                                </div>
+                                }
+
+                                @if (selectedCity.Accommodations.Houses?.Any() == true)
+                                {
+                                    <div class="mb-4">
+                                        <h5>Houses</h5>
+                                        @foreach (var house in selectedCity.Accommodations.Houses)
+                                        {
+                                            <p><strong>Average Monthly Rent:</strong> £@house.AvePerMonth</p>
+                                            <p><strong>Average Weekly Rent:</strong> £@((house.AvePerMonth * 12 / 52).ToString("F2"))</p>
+                                        }
+                                    </div>
+                                }
+                            }
+
+                            @if (selectedCity.Groceries is not null && selectedCity.Groceries.Accommodations is not null && selectedCity.Groceries.Accommodations.Any())
+                            {
+                                <h4 class="border-bottom pb-2 mt-4">Groceries</h4>
+                                <p><strong>Average Weekly Grocery Cost:</strong> £@GetAverageGroceryCost(selectedCity).ToString("F2")</p>
 
                                 <div class="mt-3">
-                                    <p class="mb-0"><strong>Available Student Jobs:</strong> @(city.Jobs?.PartTimeJobPostings ?? "Data not available")</p>
-                                    <p class="mb-0"><strong>Median Wage:</strong> £@(city.Jobs?.MedianWage ?? 0)/hour</p>
-                                    <p class="mb-0"><strong>Employment Rate:</strong> @(((city.Jobs?.EmploymentRate ?? 0) * 100).ToString("F0"))%</p>
+                                    <h5>Available Supermarkets</h5>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        @foreach (var supermarket in GetUniqueSupermarkets(selectedCity))
+                                        {
+                                            <span class="badge bg-info">@supermarket</span>
+                                        }
+                                    </div>
                                 </div>
 
-                                @if (GetRelevantAccommodations(university, city).Any())
+                                @if (GetUniversitiesInCity(selectedCity.Id).Any())
                                 {
                                     <div class="mt-4">
-                                        <h6 class="border-bottom pb-2">Accommodation Details</h6>
-                                        @foreach (var accommodation in GetRelevantAccommodations(university, city))
+                                        <h5>University-Specific Grocery Information</h5>
+                                        @foreach (var uni in GetUniversitiesInCity(selectedCity.Id))
                                         {
-                                            <div class="mb-2">
-                                                <p class="mb-1"><strong>@accommodation.Name</strong> @(accommodation.UniversityOwned ? "(University Owned)" : "(Private)")</p>
-                                                <p class="mb-1 small">Nearest supermarket: @accommodation.NearestSupermarket</p>
-                                                <p class="mb-0 small">Average grocery cost: £@accommodation.AverageSupermarketCost/week</p>
+                                            <div class="mb-3">
+                                                <p><strong>@uni.UniversityName:</strong> £@GetUniversityGroceryCost(uni.Id, selectedCity).ToString("F2")/week</p>
+                                                <div class="d-flex flex-wrap gap-2">
+                                                    <small>Nearest supermarkets:</small>
+                                                    @foreach (var supermarket in GetUniSupermarkets(uni.Id, selectedCity))
+                                                    {
+                                                        <span class="badge bg-secondary">@supermarket</span>
+                                                    }
+                                                </div>
                                             </div>
                                         }
                                     </div>
                                 }
                             }
-                            else
+
+                            @if (selectedCity.Jobs is not null)
                             {
-                                <div class="alert alert-warning">
-                                    No cost information available for this university
+                                <h4 class="border-bottom pb-2 mt-4">Employment</h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p><strong>Available Student Jobs:</strong> @(selectedCity.Jobs.PartTimeJobPostings ?? "Data not available")</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p><strong>Median Wage:</strong> £@(selectedCity.Jobs.MedianWage)/hour</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p><strong>Employment Rate:</strong> @((selectedCity.Jobs.EmploymentRate * 100).ToString("F0"))%</p>
+                                    </div>
                                 </div>
                             }
-                        </div>
-                        <div class="card-footer">
-                            @if (!string.IsNullOrEmpty(university.Url))
+
+                            @if (selectedCity.Entertainment is not null)
                             {
-                                <a href="@university.Url" target="_blank" class="btn btn-outline-primary w-100">
-                                    Visit University Website
-                                </a>
+                                <h4 class="border-bottom pb-2 mt-4">Entertainment</h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p><strong>Going Out:</strong> £@selectedCity.Entertainment.GoingOut.ToString("F2")/week</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p><strong>Health & Wellness:</strong> £@selectedCity.Entertainment.HealthAndWellness.ToString("F2")/week</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p><strong>Holidays & Events:</strong> £@selectedCity.Entertainment.HolidayAndEvents.ToString("F2")/week</p>
+                                    </div>
+                                </div>
+                                <p><strong>Total Entertainment Cost:</strong> £@GetTotalEntertainmentCost(selectedCity).ToString("F2")/week</p>
                             }
-                            else
-                            {
-                                <button class="btn btn-outline-secondary w-100" disabled>
-                                    No Website Available
-                                </button>
-                            }
+
                         </div>
                     </div>
                 </div>
-            }
-        </div>
-    }
+            </div>
+        }
+
+        @if (selectedCities.Count > 0)
+        {
+            <div class="row mb-5">
+                <div class="col-12 mb-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2>City Comparison</h2>
+                        @if (selectedCities.Count < 3)
+                        {
+                            <button class="btn btn-outline-primary" @onclick="() => isAddingToComparison = true">
+                                <i class="bi bi-plus-lg"></i> Add City to Compare
+                            </button>
+                        }
+                    </div>
+                </div>
+
+                @foreach (var city in selectedCities)
+                {
+                    <div class="col-md-@(12 / Math.Max(1, Math.Min(selectedCities.Count, 3)))">
+                        <div class="card shadow h-100">
+                            <div class="card-header bg-primary text-white">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="m-0">@city.CityName</h5>
+                                    <button class="btn btn-sm btn-outline-light"
+                                            @onclick="() => RemoveCity(city)">
+                                        <i class="bi bi-x-lg"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                @if (city.Accommodations is not null)
+                                {
+                                    <h6 class="border-bottom pb-2">Accommodation</h6>
+                                    @if (city.Accommodations.Halls is not null && city.Accommodations.Halls.Any())
+                                    {
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>Average Hall Rating:</strong> @GetAverageHallRating(city).ToString("F2")</p>
+                                            <p class="mb-1"><strong>Average Hall Price:</strong> £@GetAverageHallPrice(city).ToString("F2")/week</p>
+                                            <p class="mb-1"><strong>Average Hall Value:</strong> @GetAverageHallValueForMoney(city).ToString("F4")</p>
+                                        </div>
+                                    }
+
+                                    @if (city.Accommodations.Houses?.Any() == true)
+                                    {
+                                        <div class="mb-3">
+                                            <p class="mb-1">
+                                                <strong>Average House Rent:</strong>
+                                                £@((city.Accommodations.Houses.Average(h => h.AvePerMonth) * 12 / 52).ToString("F2"))/week
+                                            </p>
+                                        </div>
+                                    }
+                                }
+
+                                @if (city.Groceries is not null && city.Groceries.Accommodations is not null && city.Groceries.Accommodations.Any())
+                                {
+                                    <h6 class="border-bottom pb-2 mt-3">Groceries</h6>
+                                    <p class="mb-1"><strong>Avg Grocery Cost:</strong> £@GetAverageGroceryCost(city).ToString("F2")/week</p>
+                                }
+
+                                @if (city.Entertainment is not null)
+                                {
+                                    <h6 class="border-bottom pb-2 mt-3">Entertainment</h6>
+                                    <p class="mb-1"><strong>Total Entertainment:</strong> £@GetTotalEntertainmentCost(city).ToString("F2")/week</p>
+                                }
+
+                                @if (city.Jobs is not null)
+                                {
+                                    <h6 class="border-bottom pb-2 mt-3">Employment</h6>
+                                    <p class="mb-1"><strong>Student Jobs:</strong> @(city.Jobs.PartTimeJobPostings ?? "Data not available")</p>
+                                    <p class="mb-1"><strong>Median Wage:</strong> £@(city.Jobs.MedianWage)/hour</p>
+                                }
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-outline-primary w-100" @onclick="() => ViewFullDetails(city)">
+                                    View Full Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+    </div>
+
 </div>
 
 @code {
@@ -187,9 +321,16 @@
     private List<City> allCities = new();
     private Dictionary<int, City> citiesById = new();
     private List<University> filteredUniversities = new();
-    private List<University> selectedUniversities = new();
+    private List<City> filteredCities = new();
+    private List<City> selectedCities = new();
+    private City? selectedCity = null;
+    private bool cityComparisonMode = false;
     private int selectedWeeks = 44;
     private bool isAddingToComparison = false;
+
+    private bool showHalls = false;
+    private string hallFilter = string.Empty;
+    private string hallSortOption = "name_asc";
 
     protected override async Task OnInitializedAsync()
     {
@@ -222,40 +363,204 @@
             .ToList();
     }
 
+    private void FilterCities()
+    {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            filteredCities.Clear();
+            return;
+        }
+
+        filteredCities = allCities
+            .Where(c => c.CityName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+    }
+
     private string GetCityName(int cityId)
     {
         return citiesById.TryGetValue(cityId, out var city) ? city.CityName : "Unknown";
     }
 
-    private void SelectUniversity(University university)
+    private void SelectCity(City city)
     {
         if (isAddingToComparison)
         {
-            if (!selectedUniversities.Any(u => u.Id == university.Id) && selectedUniversities.Count < 3)
+            if (!selectedCities.Any(c => c.Id == city.Id) && selectedCities.Count < 3)
             {
-                selectedUniversities.Add(university);
+                selectedCities.Add(city);
             }
             isAddingToComparison = false;
+            cityComparisonMode = true;
         }
-        else
+        else if (!cityComparisonMode)
         {
-            selectedUniversities.Clear();
-            selectedUniversities.Add(university);
+            selectedCity = city;
         }
 
         searchTerm = string.Empty;
-        filteredUniversities.Clear();
+        filteredCities.Clear();
+        showHalls = false;
+        hallFilter = string.Empty;
     }
 
-    private void RemoveUniversity(University university)
+    private void RemoveCity(City city)
     {
-        selectedUniversities.RemoveAll(u => u.Id == university.Id);
+        selectedCities.RemoveAll(c => c.Id == city.Id);
+        if (selectedCities.Count == 0)
+        {
+            cityComparisonMode = false;
+        }
+    }
+
+    private void ClearSelection()
+    {
+        selectedCity = null;
+        selectedCities.Clear();
+        cityComparisonMode = false;
+    }
+
+    private void ToggleHallsVisibility()
+    {
+        showHalls = !showHalls;
+    }
+
+    private decimal GetAverageHallRating(City city)
+    {
+        if (city.Accommodations?.Halls is null || !city.Accommodations.Halls.Any())
+            return 0;
+
+        return city.Accommodations.Halls.Average(h => h.Ratings);
+    }
+
+    private decimal GetAverageHallPrice(City city)
+    {
+        if (city.Accommodations?.Halls is null || !city.Accommodations.Halls.Any())
+            return 0;
+
+        var hallsWithPrice = city.Accommodations.Halls.Where(h => h.Price > 0);
+        if (!hallsWithPrice.Any())
+            return 0;
+
+        return hallsWithPrice.Average(h => h.Price);
+    }
+
+    private decimal GetAverageHallValueForMoney(City city)
+    {
+        if (city.Accommodations?.Halls is null || !city.Accommodations.Halls.Any())
+            return 0;
+
+        var validHalls = city.Accommodations.Halls
+            .Where(h => h.Ratings > 0 && h.Price > 0);
+
+        if (!validHalls.Any())
+            return 0;
+
+        return Math.Round(validHalls.Average(h => h.Ratings / h.Price), 4);
+    }
+
+    private decimal CalculateValueForMoney(dynamic hall)
+    {
+        if (hall.Ratings > 0 && hall.Price > 0)
+            return Math.Round((decimal)hall.Ratings / (decimal)hall.Price, 4);
+        return 0;
+    }
+
+    private List<HallInfo> GetFilteredAndSortedHalls()
+    {
+        if (selectedCity?.Accommodations?.Halls is null)
+            return [];
+
+        List<HallInfo> filteredHalls = string.IsNullOrWhiteSpace(hallFilter)
+            ? selectedCity.Accommodations.Halls
+            : selectedCity.Accommodations.Halls
+                .Where(h => h.Name?.Contains(hallFilter, StringComparison.OrdinalIgnoreCase) ?? false)
+                .ToList();
+
+        switch (hallSortOption)
+        {
+            case "name_asc":
+                return filteredHalls.OrderBy(h => h.Name).ToList();
+            case "name_desc":
+                return filteredHalls.OrderByDescending(h => h.Name).ToList();
+            case "rating_asc":
+                return filteredHalls.OrderBy(h => h.Ratings).ToList();
+            case "rating_desc":
+                return filteredHalls.OrderByDescending(h => h.Ratings).ToList();
+            case "price_asc":
+                return filteredHalls.OrderBy(h => h.Price).ToList();
+            case "price_desc":
+                return filteredHalls.OrderByDescending(h => h.Price).ToList();
+            case "value_asc":
+                return filteredHalls.OrderBy(h => CalculateValueForMoney(h)).ToList();
+            case "value_desc":
+                return filteredHalls.OrderByDescending(h => CalculateValueForMoney(h)).ToList();
+            default:
+                return filteredHalls.ToList();
+        }
+    }
+
+    private decimal GetAverageGroceryCost(City city)
+    {
+        if (city.Groceries?.Accommodations is null || !city.Groceries.Accommodations.Any())
+            return 0;
+
+        return city.Groceries.Accommodations.Average(a => a.AverageSupermarketCost);
+    }
+
+    private List<string> GetUniqueSupermarkets(City city)
+    {
+        if (city.Groceries?.Accommodations is null)
+            return [];
+
+        return city.Groceries.Accommodations
+            .Select(a => a.NearestSupermarket)
+            .Distinct()
+            .OrderBy(s => s)
+            .ToList();
+    }
+
+    private List<University> GetUniversitiesInCity(int cityId)
+    {
+        return allUniversities.Where(u => u.CityId == cityId).ToList();
+    }
+
+    private decimal GetUniversityGroceryCost(int universityId, City city)
+    {
+        if (city.Groceries?.Accommodations is null || !city.Groceries.Accommodations.Any())
+            return 0;
+
+        var uniAccommodations = city.Groceries.Accommodations
+            .Where(a => a.UniversityId == universityId);
+
+        return uniAccommodations.Any()
+            ? uniAccommodations.Average(a => a.AverageSupermarketCost)
+            : 0;
+    }
+
+    private List<string> GetUniSupermarkets(int universityId, City city)
+    {
+        if (city.Groceries?.Accommodations is null)
+            return [];
+
+        return city.Groceries.Accommodations
+            .Where(a => a.UniversityId == universityId)
+            .Select(a => a.NearestSupermarket)
+            .Distinct()
+            .ToList();
+    }
+
+    private decimal GetTotalEntertainmentCost(City city)
+    {
+        if (city.Entertainment is null)
+            return 0;
+
+        return city.Entertainment.GoingOut + city.Entertainment.HealthAndWellness + city.Entertainment.HolidayAndEvents;
     }
 
     private List<AccommodationInfo> GetRelevantAccommodations(University university, City city)
     {
         if (city?.Groceries?.Accommodations is null)
-            return new List<AccommodationInfo>();
+            return [];
 
         return city.Groceries.Accommodations
             .Where(a => !a.UniversityOwned || (a.UniversityOwned && a.UniversityId == university.Id))
@@ -283,20 +588,20 @@
         {
             return uniOwned.Average(a => a.AccommodationCostPerWeek).ToString("F2");
         }
-        
+
         return accommodations.Average(a => a.AccommodationCostPerWeek).ToString("F2");
     }
 
     private string GetEntertainmentCost(City city)
     {
-        if (city?.Entertainment == null)
+        if (city?.Entertainment is null)
             return "0.00";
 
         decimal total = 0;
         if (city.Entertainment.GoingOut > 0) total += city.Entertainment.GoingOut;
         if (city.Entertainment.HealthAndWellness > 0) total += city.Entertainment.HealthAndWellness;
         if (city.Entertainment.HolidayAndEvents > 0) total += city.Entertainment.HolidayAndEvents;
-        
+
         return total.ToString("F2");
     }
 
@@ -312,5 +617,22 @@
     private string FormatCost(string cost)
     {
         return string.IsNullOrEmpty(cost) ? "Data not available" : $"£{cost}/week";
+    }
+
+    private void ViewFullDetails(City city)
+    {
+        selectedCity = city;
+        cityComparisonMode = false;
+        selectedCities.Clear();
+    }
+
+    private void AddToComparison(City city)
+    {
+        if (!selectedCities.Any(c => c.Id == city.Id))
+            selectedCities.Add(city);
+
+        cityComparisonMode = true;
+        selectedCity = null;
+        isAddingToComparison = true;
     }
 }

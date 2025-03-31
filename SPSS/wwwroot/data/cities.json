@@ -2,11 +2,90 @@
   {
     "Id": 1,
     "CityName": "Lincoln",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "Gravity",
+          "Ratings": 4.8,
+          "Price": 167
+        },
+        {
+          "Name": "Danesgate",
+          "Ratings": 4.4,
+          "Price": 99
+        },
+        {
+          "Name": "Pine Mill",
+          "Ratings": 4.3,
+          "Price": 132
+        },
+        {
+          "Name": "Park Court",
+          "Ratings": 4.2,
+          "Price": 107
+        },
+        {
+          "Name": "Junxion",
+          "Ratings": 4.1,
+          "Price": 121
+        },
+        {
+          "Name": "Student Castle",
+          "Ratings": 4.1,
+          "Price": 140
+        },
+        {
+          "Name": "Brayford Quat",
+          "Ratings": 3.9,
+          "Price": 117
+        },
+        {
+          "Name": "Constance ",
+          "Ratings": 3.7,
+          "Price": 123
+        },
+        {
+          "Name": "St Marks",
+          "Ratings": 3.7,
+          "Price": 175
+        },
+        {
+          "Name": "179",
+          "Ratings": 3.6,
+          "Price": 191
+        },
+        {
+          "Name": "Saul House",
+          "Ratings": 3.6,
+          "Price": 230
+        },
+        {
+          "Name": "Iq Pavilions",
+          "Ratings": 3.6,
+          "Price": 112
+        },
+        {
+          "Name": "Wickham hall",
+          "Ratings": 3.6,
+          "Price": 147
+        },
+        {
+          "Name": "Courts",
+          "Ratings": 3.5,
+          "Price": 99
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 1187
+        }
+      ]
+    },
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
@@ -16,81 +95,740 @@
     "Groceries": {
       "Accommodations": [
         {
-          "Name": "St Marks",
-          "UniversityOwned": true,
           "UniversityId": 1,
           "NearestSupermarket": "Morrisons",
-          "AverageSupermarketCost": 27.47,
-          "AccommodationCostPerWeek": 175
+          "AverageSupermarketCost": 27.47
         },
         {
-          "Name": "179 High Street",
-          "UniversityOwned": true,
           "UniversityId": 1,
           "NearestSupermarket": "Tesco",
-          "AverageSupermarketCost": 25.73,
-          "AccommodationCostPerWeek": 200
+          "AverageSupermarketCost": 25.73
         },
         {
-          "Name": "Cygnet Warf",
-          "UniversityOwned": true,
           "UniversityId": 1,
           "NearestSupermarket": "Morrisons",
-          "AverageSupermarketCost": 27.47,
-          "AccommodationCostPerWeek": 175
+          "AverageSupermarketCost": 27.47
         },
         {
-          "Name": "Valentines Court",
-          "UniversityOwned": true,
           "UniversityId": 1,
           "NearestSupermarket": "Morrisons",
-          "AverageSupermarketCost": 27.47,
-          "AccommodationCostPerWeek": 175
+          "AverageSupermarketCost": 27.47
         },
         {
-          "Name": "Lincoln Courts",
-          "UniversityOwned": true,
           "UniversityId": 1,
           "NearestSupermarket": "Morrisons",
-          "AverageSupermarketCost": 27.47,
-          "AccommodationCostPerWeek": 175
+          "AverageSupermarketCost": 27.47
         },
         {
-          "Name": "The Gateway",
-          "UniversityOwned": true,
           "UniversityId": 1,
           "NearestSupermarket": "Morrisons",
-          "AverageSupermarketCost": 27.47,
-          "AccommodationCostPerWeek": 175
+          "AverageSupermarketCost": 27.47
         },
         {
-          "Name": "IQ Pavilion",
-          "UniversityOwned": false,
           "UniversityId": 0,
           "NearestSupermarket": "Morrisons",
-          "AverageSupermarketCost": 27.47,
-          "AccommodationCostPerWeek": 175
+          "AverageSupermarketCost": 27.47
         },
         {
-          "Name": "Park Court",
-          "UniversityOwned": false,
           "UniversityId": 0,
           "NearestSupermarket": "Tesco",
-          "AverageSupermarketCost": 25.73,
-          "AccommodationCostPerWeek": 200
+          "AverageSupermarketCost": 25.73
         }
       ]
     }
-
   },
   {
     "Id": 2,
     "CityName": "London",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "Elizabeth Croll",
+          "Ratings": 4.4,
+          "Price": 510
+        },
+        {
+          "Name": "Grosvenor",
+          "Ratings": 4.1,
+          "Price": 585
+        },
+        {
+          "Name": "Pavilion",
+          "Ratings": 4,
+          "Price": 274
+        },
+        {
+          "Name": "North Lodge",
+          "Ratings": 4,
+          "Price": 257
+        },
+        {
+          "Name": "Stapleton House",
+          "Ratings": 4,
+          "Price": 335
+        },
+        {
+          "Name": "Bloomsbury Janet Poole",
+          "Ratings": 4,
+          "Price": 419
+        },
+        {
+          "Name": "St Pancras ",
+          "Ratings": 3.9,
+          "Price": 337
+        },
+        {
+          "Name": "Picadilly Court",
+          "Ratings": 3.9,
+          "Price": 339
+        },
+        {
+          "Name": "Spring Mews",
+          "Ratings": 3.7,
+          "Price": 375
+        },
+        {
+          "Name": "Dinwiddy",
+          "Ratings": 3.7,
+          "Price": 238
+        },
+        {
+          "Name": "Camden Hawley",
+          "Ratings": 3.7,
+          "Price": 419
+        },
+        {
+          "Name": "New Hall",
+          "Ratings": 3.6,
+          "Price": 296
+        },
+        {
+          "Name": "Ramsay Hall",
+          "Ratings": 3.6,
+          "Price": 285
+        },
+        {
+          "Name": "AXO Camden",
+          "Ratings": 3.6,
+          "Price": 412
+        },
+        {
+          "Name": "Goldsmith",
+          "Ratings": 3.6,
+          "Price": 233
+        },
+        {
+          "Name": "Max Rayne",
+          "Ratings": 3.6,
+          "Price": 145
+        },
+        {
+          "Name": "IQ Highbury",
+          "Ratings": 3.5,
+          "Price": 320
+        },
+        {
+          "Name": "Highline Building",
+          "Ratings": 3.5,
+          "Price": 285
+        },
+        {
+          "Name": "Paul Robeson ",
+          "Ratings": 3.5,
+          "Price": 238
+        },
+        {
+          "Name": "Dashwod Studios",
+          "Ratings": 3.5,
+          "Price": 408
+        },
+        {
+          "Name": "AXO Oxford Circus",
+          "Ratings": 3.4,
+          "Price": 522
+        },
+        {
+          "Name": "IQ The Arcade",
+          "Ratings": 3.4,
+          "Price": 277
+        },
+        {
+          "Name": "iQ Costume Store",
+          "Ratings": 3.4,
+          "Price": 227
+        },
+        {
+          "Name": "Beaumont Court",
+          "Ratings": 3.4,
+          "Price": 348
+        },
+        {
+          "Name": "urbanest Kings X",
+          "Ratings": 3.4,
+          "Price": 423
+        },
+        {
+          "Name": "iFor Evans Hall",
+          "Ratings": 3.3,
+          "Price": 225
+        },
+        {
+          "Name": "Arch View",
+          "Ratings": 4,
+          "Price": 220
+        },
+        {
+          "Name": "Usher Hall ",
+          "Ratings": 3.9,
+          "Price": 220
+        },
+        {
+          "Name": "Station Court",
+          "Ratings": 3.9,
+          "Price": 279
+        },
+        {
+          "Name": "Mary Brancker",
+          "Ratings": 3.9,
+          "Price": 276
+        },
+        {
+          "Name": "Depot Point",
+          "Ratings": 3.8,
+          "Price": 447
+        },
+        {
+          "Name": "Platt Hall",
+          "Ratings": 3.8,
+          "Price": 209
+        },
+        {
+          "Name": "Olympic Way",
+          "Ratings": 3.7,
+          "Price": 269
+        },
+        {
+          "Name": "AXO Seven Sisters",
+          "Ratings": 3.7,
+          "Price": 260
+        },
+        {
+          "Name": "Charles Morton",
+          "Ratings": 3.6,
+          "Price": 310
+        },
+        {
+          "Name": "Wood Green",
+          "Ratings": 3.5,
+          "Price": 168
+        },
+        {
+          "Name": "Chapter Islington",
+          "Ratings": 3.5,
+          "Price": 356
+        },
+        {
+          "Name": "iQ Tufnell Huse",
+          "Ratings": 3.4,
+          "Price": 353
+        },
+        {
+          "Name": "Ivy Hall",
+          "Ratings": 3.3,
+          "Price": 175
+        },
+        {
+          "Name": "Pacific Court",
+          "Ratings": 4.7,
+          "Price": 365
+        },
+        {
+          "Name": "Rahere Court",
+          "Ratings": 4.6,
+          "Price": 345
+        },
+        {
+          "Name": "Sherren House",
+          "Ratings": 4.6,
+          "Price": 242
+        },
+        {
+          "Name": "Living Heights",
+          "Ratings": 4.5,
+          "Price": 435
+        },
+        {
+          "Name": "East Central House",
+          "Ratings": 4.5,
+          "Price": 365
+        },
+        {
+          "Name": "Wick Park",
+          "Ratings": 4.4,
+          "Price": 410
+        },
+        {
+          "Name": "Cross Court House",
+          "Ratings": 4.3,
+          "Price": 271
+        },
+        {
+          "Name": "Herbal Hill",
+          "Ratings": 4.2,
+          "Price": 430
+        },
+        {
+          "Name": "Romano Court ",
+          "Ratings": 4.2,
+          "Price": 455
+        },
+        {
+          "Name": "Mannequin House",
+          "Ratings": 4.2,
+          "Price": 274
+        },
+        {
+          "Name": "Wamsley Studios",
+          "Ratings": 4.1,
+          "Price": 296
+        },
+        {
+          "Name": "Blithehale Court",
+          "Ratings": 4.1,
+          "Price": 242
+        },
+        {
+          "Name": "Stratford One",
+          "Ratings": 4,
+          "Price": 315
+        },
+        {
+          "Name": "Emily Bowes",
+          "Ratings": 4,
+          "Price": 270
+        },
+        {
+          "Name": "Alliance House",
+          "Ratings": 4,
+          "Price": 240
+        },
+        {
+          "Name": "Canvas Walthamstw",
+          "Ratings": 4,
+          "Price": 295
+        },
+        {
+          "Name": "Arbour House",
+          "Ratings": 3.9,
+          "Price": 415
+        },
+        {
+          "Name": "Don Gratton",
+          "Ratings": 3.9,
+          "Price": 296
+        },
+        {
+          "Name": "Flora ",
+          "Ratings": 3.8,
+          "Price": 309
+        },
+        {
+          "Name": "Therese House",
+          "Ratings": 3.6,
+          "Price": 420
+        },
+        {
+          "Name": "Coopers Court",
+          "Ratings": 3.6,
+          "Price": 294
+        },
+        {
+          "Name": "Drapery",
+          "Ratings": 3.5,
+          "Price": 405
+        },
+        {
+          "Name": "Pooley",
+          "Ratings": 3.4,
+          "Price": 209
+        },
+        {
+          "Name": "Curve",
+          "Ratings": 3.4,
+          "Price": 361
+        },
+        {
+          "Name": "iQ Shoreditch",
+          "Ratings": 3.4,
+          "Price": 423
+        },
+        {
+          "Name": "Scape Mile End Canalside",
+          "Ratings": 3.1,
+          "Price": 340
+        },
+        {
+          "Name": "iQ City",
+          "Ratings": 2.8,
+          "Price": 424
+        },
+        {
+          "Name": "Angel Lane",
+          "Ratings": 4.6,
+          "Price": 163
+        },
+        {
+          "Name": "Halsmere Studios",
+          "Ratings": 4.6,
+          "Price": 275
+        },
+        {
+          "Name": "YourTribe South Bermondsey",
+          "Ratings": 4.3,
+          "Price": 330
+        },
+        {
+          "Name": "Wellington",
+          "Ratings": 4.3,
+          "Price": 421
+        },
+        {
+          "Name": "Julian Markham",
+          "Ratings": 4.2,
+          "Price": 330
+        },
+        {
+          "Name": "YourTRIBE Peckham",
+          "Ratings": 4.2,
+          "Price": 329
+        },
+        {
+          "Name": "Great Court",
+          "Ratings": 4.2,
+          "Price": 320
+        },
+        {
+          "Name": "The Cube Greenwich",
+          "Ratings": 4.1,
+          "Price": 431
+        },
+        {
+          "Name": "McMillan",
+          "Ratings": 4,
+          "Price": 345
+        },
+        {
+          "Name": "Creek Court",
+          "Ratings": 4,
+          "Price": 244
+        },
+        {
+          "Name": "Manna Ash ",
+          "Ratings": 4,
+          "Price": 380
+        },
+        {
+          "Name": "Raymont",
+          "Ratings": 3.9,
+          "Price": 218
+        },
+        {
+          "Name": "Surrey Quays",
+          "Ratings": 3.9,
+          "Price": 235
+        },
+        {
+          "Name": "Orchard Lisle ",
+          "Ratings": 3.9,
+          "Price": 253
+        },
+        {
+          "Name": "Glassyard",
+          "Ratings": 3.9,
+          "Price": 389
+        },
+        {
+          "Name": "Hayloft",
+          "Ratings": 3.8,
+          "Price": 545
+        },
+        {
+          "Name": "Quantum Court",
+          "Ratings": 3.7,
+          "Price": 294
+        },
+        {
+          "Name": "iQ Flinders House",
+          "Ratings": 3.7,
+          "Price": 362
+        },
+        {
+          "Name": "Chapter Westminster",
+          "Ratings": 3.7,
+          "Price": 520
+        },
+        {
+          "Name": "ATLAS",
+          "Ratings": 3.7,
+          "Price": 314
+        },
+        {
+          "Name": "iQ Vega",
+          "Ratings": 3.7,
+          "Price": 401
+        },
+        {
+          "Name": "Surrey House",
+          "Ratings": 3.7,
+          "Price": 176
+        },
+        {
+          "Name": "Town Hall",
+          "Ratings": 3.7,
+          "Price": 219
+        },
+        {
+          "Name": "Ewen Henderson",
+          "Ratings": 3.7,
+          "Price": 188
+        },
+        {
+          "Name": "Cutty Sark Hall",
+          "Ratings": 3.7,
+          "Price": 244
+        },
+        {
+          "Name": "Moonraker Point",
+          "Ratings": 3.5,
+          "Price": 357
+        },
+        {
+          "Name": "Archwood House",
+          "Ratings": 3.5,
+          "Price": 220
+        },
+        {
+          "Name": "Great Dover Street",
+          "Ratings": 3.4,
+          "Price": 169
+        },
+        {
+          "Name": "Furzedown Student Village",
+          "Ratings": 3.2,
+          "Price": 228
+        },
+        {
+          "Name": "Loring Hall",
+          "Ratings": 3.2,
+          "Price": 221
+        },
+        {
+          "Name": "McLaren House",
+          "Ratings": 2.8,
+          "Price": 194
+        },
+        {
+          "Name": "One Penrhyn Road",
+          "Ratings": 4.8,
+          "Price": 345
+        },
+        {
+          "Name": "Park House Earls Court",
+          "Ratings": 4.4,
+          "Price": 203
+        },
+        {
+          "Name": "Chelsea Lightfoot",
+          "Ratings": 4.3,
+          "Price": 418
+        },
+        {
+          "Name": "Prince Consort",
+          "Ratings": 4.3,
+          "Price": 269
+        },
+        {
+          "Name": "Fulham Palace",
+          "Ratings": 4.1,
+          "Price": 370
+        },
+        {
+          "Name": "Davidson",
+          "Ratings": 4,
+          "Price": 280
+        },
+        {
+          "Name": "Tribu",
+          "Ratings": 4,
+          "Price": 430
+        },
+        {
+          "Name": "Quebec",
+          "Ratings": 4,
+          "Price": 305
+        },
+        {
+          "Name": "Sidney Webb",
+          "Ratings": 3.8,
+          "Price": 247
+        },
+        {
+          "Name": "Lilian Knowles",
+          "Ratings": 3.8,
+          "Price": 209
+        },
+        {
+          "Name": "Roseberry",
+          "Ratings": 3.7,
+          "Price": 276
+        },
+        {
+          "Name": "Wilson House",
+          "Ratings": 3.7,
+          "Price": 145
+        },
+        {
+          "Name": "New Orient",
+          "Ratings": 3.6,
+          "Price": 305
+        },
+        {
+          "Name": "High Holborn",
+          "Ratings": 3.2,
+          "Price": 354
+        },
+        {
+          "Name": "Seeting Wells",
+          "Ratings": 3,
+          "Price": 126
+        },
+        {
+          "Name": "Clayhill",
+          "Ratings": 2.7,
+          "Price": 171
+        },
+        {
+          "Name": "Straits Garden",
+          "Ratings": 4.4,
+          "Price": 305
+        },
+        {
+          "Name": "Parish Hall",
+          "Ratings": 4.1,
+          "Price": 255
+        },
+        {
+          "Name": "Hox Park",
+          "Ratings": 4,
+          "Price": 225
+        },
+        {
+          "Name": "Portbello Garrow",
+          "Ratings": 4,
+          "Price": 335
+        },
+        {
+          "Name": "Canvas Wembley",
+          "Ratings": 4,
+          "Price": 290
+        },
+        {
+          "Name": "Chapter Ealing",
+          "Ratings": 4,
+          "Price": 290
+        },
+        {
+          "Name": "Gowar",
+          "Ratings": 3.8,
+          "Price": 220
+        },
+        {
+          "Name": "Grand Felda",
+          "Ratings": 3.7,
+          "Price": 235
+        },
+        {
+          "Name": "Woodward",
+          "Ratings": 3.6,
+          "Price": 160
+        },
+        {
+          "Name": "Felda",
+          "Ratings": 3.6,
+          "Price": 259
+        },
+        {
+          "Name": "WILLIAMSON",
+          "Ratings": 3.6,
+          "Price": 220
+        },
+        {
+          "Name": "Lyra",
+          "Ratings": 3.6,
+          "Price": 360
+        },
+        {
+          "Name": "Wedderburn",
+          "Ratings": 3.6,
+          "Price": 220
+        },
+        {
+          "Name": "Highfield Court",
+          "Ratings": 3.6,
+          "Price": 187
+        },
+        {
+          "Name": "Founder\u0027s",
+          "Ratings": 3.6,
+          "Price": 197
+        },
+        {
+          "Name": "Sketch",
+          "Ratings": 3.5,
+          "Price": 197
+        },
+        {
+          "Name": "Reid",
+          "Ratings": 3.4,
+          "Price": 208
+        },
+        {
+          "Name": "Runnymede",
+          "Ratings": 3.3,
+          "Price": 201
+        },
+        {
+          "Name": "Penrowe",
+          "Ratings": 3.3,
+          "Price": 133
+        },
+        {
+          "Name": "iQ Stering",
+          "Ratings": 3.3,
+          "Price": 261
+        },
+        {
+          "Name": "Faraday Hall",
+          "Ratings": 3.2,
+          "Price": 214
+        },
+        {
+          "Name": "Harrow Hall ",
+          "Ratings": 3.2,
+          "Price": 204
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 3057
+        }
+      ]
+    },
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
@@ -100,28 +838,109 @@
     "Groceries": {
       "Accommodations": [
         {
-          "Name": "Beit Hall",
-          "UniversityOwned": true,
           "UniversityId": 2,
-          "NearestSupermarket": "Sainsbury's",
-          "AverageSupermarketCost": 25.87,
-          "AccommodationCostPerWeek": 200
+          "NearestSupermarket": "Sainsbury\u0027s",
+          "AverageSupermarketCost": 25.87
         },
         {
-          "Name": "Southside Halls",
-          "UniversityOwned": true,
           "UniversityId": 2,
-          "NearestSupermarket": "Sainsbury's",
-          "AverageSupermarketCost": 25.87,
-          "AccommodationCostPerWeek": 250
+          "NearestSupermarket": "Sainsbury\u0027s",
+          "AverageSupermarketCost": 25.87
         },
         {
-          "Name": "Depot Point",
-          "UniversityOwned": false,
           "UniversityId": 0,
           "NearestSupermarket": "Tesco",
-          "AverageSupermarketCost": 25.73,
-          "AccommodationCostPerWeek": 200
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 3,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 3,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 3,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 4,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 28.74
+        },
+        {
+          "UniversityId": 4,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47
+        },
+        {
+          "UniversityId": 4,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 5,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 5,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 28.74
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
         }
       ]
     }
@@ -129,11 +948,90 @@
   {
     "Id": 3,
     "CityName": "Oxford",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "Between Towns",
+          "Ratings": 4.8,
+          "Price": 331
+        },
+        {
+          "Name": "West Way",
+          "Ratings": 4.5,
+          "Price": 275
+        },
+        {
+          "Name": "Cambridge Ter",
+          "Ratings": 4.2,
+          "Price": 240
+        },
+        {
+          "Name": "Canterbury",
+          "Ratings": 3.7,
+          "Price": 178
+        },
+        {
+          "Name": "Parade Green",
+          "Ratings": 3.7,
+          "Price": 195
+        },
+        {
+          "Name": "The Park",
+          "Ratings": 3.7,
+          "Price": 198
+        },
+        {
+          "Name": "Sinnet ",
+          "Ratings": 3.6,
+          "Price": 178
+        },
+        {
+          "Name": "Cheney",
+          "Ratings": 3.5,
+          "Price": 189
+        },
+        {
+          "Name": "Dorset",
+          "Ratings": 3.5,
+          "Price": 215
+        },
+        {
+          "Name": "Edna Rose",
+          "Ratings": 3.5,
+          "Price": 178
+        },
+        {
+          "Name": "Clive Booth",
+          "Ratings": 3.3,
+          "Price": 186
+        },
+        {
+          "Name": "Westminster",
+          "Ratings": 3.3,
+          "Price": 188
+        },
+        {
+          "Name": "Paul Kent",
+          "Ratings": 3.3,
+          "Price": 199
+        },
+        {
+          "Name": "Crescent",
+          "Ratings": 3,
+          "Price": 135
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 2480
+        }
+      ]
+    },
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
@@ -143,12 +1041,84 @@
     "Groceries": {
       "Accommodations": [
         {
-          "Name": "Oxford College Accommodation",
-          "UniversityOwned": true,
           "UniversityId": 6,
           "NearestSupermarket": "Sainsbury's",
-          "AverageSupermarketCost": 32,
-          "AccommodationCostPerWeek": 200
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 6,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 6,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 6,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 6,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 6,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 6,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 6,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 6,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 28.74
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
         }
       ]
     }
@@ -156,26 +1126,150 @@
   {
     "Id": 4,
     "CityName": "Southampton",
-    "Jobs": {
-      "MedianWage": 12.75,
-      "EmploymentRate": 0.75,
-      "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "The Walls",
+          "Ratings": 4.9,
+          "Price": 239
+        },
+        {
+          "Name": "Unilife High St",
+          "Ratings": 4.8,
+          "Price": 265
+        },
+        {
+          "Name": "UBargate House",
+          "Ratings": 4.8,
+          "Price": 295
+        },
+        {
+          "Name": "Cumberland",
+          "Ratings": 4.6,
+          "Price": 240
+        },
+        {
+          "Name": "Park House ",
+          "Ratings": 4.6,
+          "Price": 264
+        },
+        {
+          "Name": "Vincent Place",
+          "Ratings": 4.6,
+          "Price": 213
+        },
+        {
+          "Name": "Canvas",
+          "Ratings": 4.5,
+          "Price": 132
+        },
+        {
+          "Name": "Brunswick",
+          "Ratings": 4.5,
+          "Price": 252
+        },
+        {
+          "Name": "Orion",
+          "Ratings": 4.4,
+          "Price": 179
+        },
+        {
+          "Name": "London Rd",
+          "Ratings": 4.3,
+          "Price": 269
+        },
+        {
+          "Name": "Green Wood",
+          "Ratings": 4.3,
+          "Price": 121
+        },
+        {
+          "Name": "Mercury Pt",
+          "Ratings": 4.2,
+          "Price": 179
+        },
+        {
+          "Name": "Emily Davies",
+          "Ratings": 4.2,
+          "Price": 140
+        },
+        {
+          "Name": "Lucia Foster",
+          "Ratings": 4.2,
+          "Price": 90
+        },
+        {
+          "Name": "The Court",
+          "Ratings": 4,
+          "Price": 241
+        },
+        {
+          "Name": "Marland",
+          "Ratings": 3.9,
+          "Price": 200
+        },
+        {
+          "Name": "St Margarets",
+          "Ratings": 3.8,
+          "Price": 202
+        },
+        {
+          "Name": "Austen",
+          "Ratings": 3.8,
+          "Price": 165
+        },
+        {
+          "Name": "Crescent",
+          "Ratings": 3.7,
+          "Price": 165
+        },
+        {
+          "Name": "Glen Eyre",
+          "Ratings": 3.7,
+          "Price": 135
+        },
+        {
+          "Name": "Kimber Student",
+          "Ratings": 3.6,
+          "Price": 159
+        },
+        {
+          "Name": "Wessex Line",
+          "Ratings": 3.6,
+          "Price": 135
+        },
+        {
+          "Name": "Mayflower",
+          "Ratings": 3.5,
+          "Price": 201
+        },
+        {
+          "Name": "Deanery",
+          "Ratings": 3.4,
+          "Price": 149
+        },
+        {
+          "Name": "Vita ",
+          "Ratings": 3.4,
+          "Price": 268
+        },
+        {
+          "Name": "Chantry",
+          "Ratings": 3.4,
+          "Price": 121
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 1746
+        }
+      ]
     },
-    "Entertainment": {
-      "GoingOut": 37,
-      "HealthAndWellness": 30,
-      "HolidayAndEvents": 33
-    }
-  },
-  {
-    "Id": 5,
-    "CityName": "Manchester",
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
@@ -185,11 +1279,477 @@
     "Groceries": {
       "Accommodations": [
         {
-          "Name": "Manchester Halls",
-          "UniversityOwned": true,
-          "UniversityId": 8,
+          "UniversityId": 7,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 7,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 7,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 7,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 7,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 7,
           "NearestSupermarket": "Asda",
-          "AverageSupermarketCost": 22
+          "AverageSupermarketCost": 28.74
+        },
+        {
+          "UniversityId": 7,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 28.74
+        },
+        {
+          "UniversityId": 7,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 28.74
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 28.74
+        }
+      ]
+    }
+  },
+  {
+    "Id": 5,
+    "CityName": "Manchester",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "Bridgewater",
+          "Ratings": 4.8,
+          "Price": 275
+        },
+        {
+          "Name": "Artisan",
+          "Ratings": 4.7,
+          "Price": 295
+        },
+        {
+          "Name": "Canvas",
+          "Ratings": 4.7,
+          "Price": 254
+        },
+        {
+          "Name": "Picadilly Point",
+          "Ratings": 4.6,
+          "Price": 240
+        },
+        {
+          "Name": "Element Manchester",
+          "Ratings": 4.4,
+          "Price": 330
+        },
+        {
+          "Name": "Victoria Point",
+          "Ratings": 4.3,
+          "Price": 174
+        },
+        {
+          "Name": "Parkway Gate",
+          "Ratings": 4.3,
+          "Price": 275
+        },
+        {
+          "Name": "Kincardine Court",
+          "Ratings": 4.3,
+          "Price": 270
+        },
+        {
+          "Name": "The Chapel",
+          "Ratings": 4.2,
+          "Price": 263
+        },
+        {
+          "Name": "Mill Point",
+          "Ratings": 4.1,
+          "Price": 195
+        },
+        {
+          "Name": "New Medlock",
+          "Ratings": 4,
+          "Price": 320
+        },
+        {
+          "Name": "The Grafton",
+          "Ratings": 4,
+          "Price": 170
+        },
+        {
+          "Name": "Unsworth park",
+          "Ratings": 4,
+          "Price": 207
+        },
+        {
+          "Name": "Archway",
+          "Ratings": 3.9,
+          "Price": 198
+        },
+        {
+          "Name": "Charles Grover",
+          "Ratings": 3.9,
+          "Price": 319
+        },
+        {
+          "Name": "Chancellors",
+          "Ratings": 3.9,
+          "Price": 141
+        },
+        {
+          "Name": "Allen Court",
+          "Ratings": 3.9,
+          "Price": 175
+        },
+        {
+          "Name": "Denmark",
+          "Ratings": 3.8,
+          "Price": 223
+        },
+        {
+          "Name": "Mayfair",
+          "Ratings": 3.8,
+          "Price": 176
+        },
+        {
+          "Name": "Manchester Court",
+          "Ratings": 3.8,
+          "Price": 159
+        },
+        {
+          "Name": "Ropemaker",
+          "Ratings": 3.8,
+          "Price": 200
+        },
+        {
+          "Name": "Daisybank",
+          "Ratings": 3.8,
+          "Price": 169
+        },
+        {
+          "Name": "Rusholme",
+          "Ratings": 3.7,
+          "Price": 191
+        },
+        {
+          "Name": "Rosamond",
+          "Ratings": 3.7,
+          "Price": 158
+        },
+        {
+          "Name": "Grafton",
+          "Ratings": 3.7,
+          "Price": 202
+        },
+        {
+          "Name": "St Anselm",
+          "Ratings": 3.6,
+          "Price": 163
+        },
+        {
+          "Name": "Hulme Halll",
+          "Ratings": 3.6,
+          "Price": 136
+        },
+        {
+          "Name": "Birley",
+          "Ratings": 3.6,
+          "Price": 182
+        },
+        {
+          "Name": "Richmond ",
+          "Ratings": 3.6,
+          "Price": 171
+        },
+        {
+          "Name": "Manchester Student Village",
+          "Ratings": 3.6,
+          "Price": 155
+        },
+        {
+          "Name": "Weston",
+          "Ratings": 3.6,
+          "Price": 154
+        },
+        {
+          "Name": "Oak House",
+          "Ratings": 3.6,
+          "Price": 113
+        },
+        {
+          "Name": "Woolton ",
+          "Ratings": 3.5,
+          "Price": 175
+        },
+        {
+          "Name": "Langdale",
+          "Ratings": 3.5,
+          "Price": 122
+        },
+        {
+          "Name": "Cambridge",
+          "Ratings": 3.5,
+          "Price": 137
+        },
+        {
+          "Name": "Cavendish",
+          "Ratings": 3.5,
+          "Price": 146
+        },
+        {
+          "Name": "MSV South",
+          "Ratings": 3.4,
+          "Price": 198
+        },
+        {
+          "Name": "Manchester House",
+          "Ratings": 3.4,
+          "Price": 225
+        },
+        {
+          "Name": "Whitworth",
+          "Ratings": 3.4,
+          "Price": 117
+        },
+        {
+          "Name": "Sheavyn",
+          "Ratings": 3.4,
+          "Price": 171
+        },
+        {
+          "Name": "Oxford Court",
+          "Ratings": 3.3,
+          "Price": 187
+        },
+        {
+          "Name": "Burkhardt",
+          "Ratings": 3.3,
+          "Price": 171
+        },
+        {
+          "Name": "iQ Weston",
+          "Ratings": 3.3,
+          "Price": 173
+        },
+        {
+          "Name": "Ashbourne ",
+          "Ratings": 3.3,
+          "Price": 128
+        },
+        {
+          "Name": "Briarfield",
+          "Ratings": 3.3,
+          "Price": 166
+        },
+        {
+          "Name": "IQ Daisy Bank",
+          "Ratings": 3.3,
+          "Price": 191
+        },
+        {
+          "Name": "Oxney House ",
+          "Ratings": 3.3,
+          "Price": 209
+        },
+        {
+          "Name": "Dalton Ellis Hall",
+          "Ratings": 3.3,
+          "Price": 174
+        },
+        {
+          "Name": "Brook Hall",
+          "Ratings": 3.3,
+          "Price": 205
+        },
+        {
+          "Name": "iQ Lambert",
+          "Ratings": 3.2,
+          "Price": 230
+        },
+        {
+          "Name": "iQ Wilmslow",
+          "Ratings": 3.1,
+          "Price": 253
+        },
+        {
+          "Name": "Canterbury",
+          "Ratings": 3,
+          "Price": 171
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 1828
+        }
+      ]
+    },
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200\u002B"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "UniversityId": 8,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 8,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 8,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 8,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 8,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 8,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 9,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 28.74
+        },
+        {
+          "UniversityId": 9,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 28.74
+        },
+        {
+          "UniversityId": 9,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 9,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 28.74
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 28.74
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 28.74
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
         }
       ]
     }
@@ -197,136 +1757,2541 @@
   {
     "Id": 6,
     "CityName": "Liverpool",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "Limeight",
+          "Ratings": 4.6,
+          "Price": 166
+        },
+        {
+          "Name": "Benson yard",
+          "Ratings": 4.6,
+          "Price": 175
+        },
+        {
+          "Name": "Calico",
+          "Ratings": 4.6,
+          "Price": 165
+        },
+        {
+          "Name": "St Luke\u0027s",
+          "Ratings": 4.6,
+          "Price": 165
+        },
+        {
+          "Name": "Horizon",
+          "Ratings": 4.5,
+          "Price": 175
+        },
+        {
+          "Name": "iconInc Ascent",
+          "Ratings": 4.4,
+          "Price": 228
+        },
+        {
+          "Name": "Fontenoy",
+          "Ratings": 4.4,
+          "Price": 180
+        },
+        {
+          "Name": "Hope St",
+          "Ratings": 4.4,
+          "Price": 160
+        },
+        {
+          "Name": "Moorfield",
+          "Ratings": 4.4,
+          "Price": 130
+        },
+        {
+          "Name": "Granville",
+          "Ratings": 4.4,
+          "Price": 136
+        },
+        {
+          "Name": "St Andrew\u0027s",
+          "Ratings": 4.3,
+          "Price": 89
+        },
+        {
+          "Name": "Chatham",
+          "Ratings": 4.2,
+          "Price": 140
+        },
+        {
+          "Name": "Albert Crt",
+          "Ratings": 4.2,
+          "Price": 123
+        },
+        {
+          "Name": "Marybone 3 ",
+          "Ratings": 4.2,
+          "Price": 122
+        },
+        {
+          "Name": "Byrom Point",
+          "Ratings": 4.2,
+          "Price": 160
+        },
+        {
+          "Name": "Marybone 1",
+          "Ratings": 4.1,
+          "Price": 95
+        },
+        {
+          "Name": "Apollo",
+          "Ratings": 4.1,
+          "Price": 230
+        },
+        {
+          "Name": "Myrtle",
+          "Ratings": 4.1,
+          "Price": 151
+        },
+        {
+          "Name": "GRAND CENTRAL ",
+          "Ratings": 4.1,
+          "Price": 119
+        },
+        {
+          "Name": "Lantern",
+          "Ratings": 4.1,
+          "Price": 162
+        },
+        {
+          "Name": "Arrad",
+          "Ratings": 4,
+          "Price": 124
+        },
+        {
+          "Name": "Cambridge",
+          "Ratings": 4,
+          "Price": 125
+        },
+        {
+          "Name": "Atlantic",
+          "Ratings": 4,
+          "Price": 124
+        },
+        {
+          "Name": "Prospect",
+          "Ratings": 4,
+          "Price": 125
+        },
+        {
+          "Name": "Art School",
+          "Ratings": 4,
+          "Price": 193
+        },
+        {
+          "Name": "Lennon",
+          "Ratings": 4,
+          "Price": 125
+        },
+        {
+          "Name": "Ablett",
+          "Ratings": 4,
+          "Price": 145
+        },
+        {
+          "Name": "paddington",
+          "Ratings": 4,
+          "Price": 119
+        },
+        {
+          "Name": "Maple",
+          "Ratings": 4,
+          "Price": 143
+        },
+        {
+          "Name": "Haigh",
+          "Ratings": 3.9,
+          "Price": 140
+        },
+        {
+          "Name": "Windsor",
+          "Ratings": 3.9,
+          "Price": 189
+        },
+        {
+          "Name": "Capital",
+          "Ratings": 3.8,
+          "Price": 141
+        },
+        {
+          "Name": "Electra",
+          "Ratings": 3.8,
+          "Price": 210
+        },
+        {
+          "Name": "Medville",
+          "Ratings": 3.8,
+          "Price": 161
+        },
+        {
+          "Name": "Unity",
+          "Ratings": 3.8,
+          "Price": 135
+        },
+        {
+          "Name": "Marybone 2",
+          "Ratings": 3.8,
+          "Price": 122
+        },
+        {
+          "Name": "Hahnemann",
+          "Ratings": 3.8,
+          "Price": 178
+        },
+        {
+          "Name": "Arch",
+          "Ratings": 3.7,
+          "Price": 152
+        },
+        {
+          "Name": "Railyard",
+          "Ratings": 3.7,
+          "Price": 140
+        },
+        {
+          "Name": "Cathedral Campus",
+          "Ratings": 3.7,
+          "Price": 122
+        },
+        {
+          "Name": "Europa",
+          "Ratings": 3.7,
+          "Price": 119
+        },
+        {
+          "Name": "Islington",
+          "Ratings": 3.6,
+          "Price": 135
+        },
+        {
+          "Name": "Great Newton",
+          "Ratings": 3.6,
+          "Price": 143
+        },
+        {
+          "Name": "Cedar",
+          "Ratings": 3.6,
+          "Price": 165
+        },
+        {
+          "Name": "Hayward",
+          "Ratings": 3.5,
+          "Price": 132
+        },
+        {
+          "Name": "Crown Place",
+          "Ratings": 3.5,
+          "Price": 174
+        },
+        {
+          "Name": "Vine Court",
+          "Ratings": 3.3,
+          "Price": 189
+        },
+        {
+          "Name": "Vita Student",
+          "Ratings": 3.2,
+          "Price": 191
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 1121
+        }
+      ]
+    },
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "UniversityId": 10,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 10,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 10,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 10,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 10,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 11,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 11,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 11,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 11,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 11,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        }
+      ]
     }
   },
   {
     "Id": 7,
     "CityName": "Coventry",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "Canvas Arudenl",
+          "Ratings": 4.5,
+          "Price": 121
+        },
+        {
+          "Name": "Infinity",
+          "Ratings": 4.4,
+          "Price": 128
+        },
+        {
+          "Name": "CODE Fairfax",
+          "Ratings": 4.4,
+          "Price": 154
+        },
+        {
+          "Name": "Abbey",
+          "Ratings": 4.4,
+          "Price": 110
+        },
+        {
+          "Name": "Willowbank",
+          "Ratings": 4.4,
+          "Price": 120
+        },
+        {
+          "Name": "Gulson Gardens",
+          "Ratings": 4.3,
+          "Price": 90
+        },
+        {
+          "Name": "Raglan",
+          "Ratings": 4.3,
+          "Price": 99
+        },
+        {
+          "Name": "Corporation",
+          "Ratings": 4.3,
+          "Price": 85
+        },
+        {
+          "Name": "33 Parkside",
+          "Ratings": 4.3,
+          "Price": 165
+        },
+        {
+          "Name": "Albany",
+          "Ratings": 4.3,
+          "Price": 141
+        },
+        {
+          "Name": "City Village",
+          "Ratings": 4.2,
+          "Price": 150
+        },
+        {
+          "Name": "Eden Square ",
+          "Ratings": 4.2,
+          "Price": 170
+        },
+        {
+          "Name": "Residence",
+          "Ratings": 4.2,
+          "Price": 173
+        },
+        {
+          "Name": "Apollo",
+          "Ratings": 4.2,
+          "Price": 85
+        },
+        {
+          "Name": "Canvas Arudenl",
+          "Ratings": 4.1,
+          "Price": 111
+        },
+        {
+          "Name": "CODE harper",
+          "Ratings": 4.1,
+          "Price": 119
+        },
+        {
+          "Name": "Queen\u0027s Park",
+          "Ratings": 4.1,
+          "Price": 99
+        },
+        {
+          "Name": "Market Way",
+          "Ratings": 4.1,
+          "Price": 99
+        },
+        {
+          "Name": "Oaks",
+          "Ratings": 4.1,
+          "Price": 209
+        },
+        {
+          "Name": "Trinity",
+          "Ratings": 4,
+          "Price": 120
+        },
+        {
+          "Name": "Burges",
+          "Ratings": 4,
+          "Price": 99
+        },
+        {
+          "Name": "Red Queen",
+          "Ratings": 3.9,
+          "Price": 147
+        },
+        {
+          "Name": "Union",
+          "Ratings": 3.9,
+          "Price": 160
+        },
+        {
+          "Name": "Millennium",
+          "Ratings": 3.8,
+          "Price": 105
+        },
+        {
+          "Name": "Sherbourne",
+          "Ratings": 3.7,
+          "Price": 150
+        },
+        {
+          "Name": "Cryfield",
+          "Ratings": 3.7,
+          "Price": 121
+        },
+        {
+          "Name": "Calcott",
+          "Ratings": 3.7,
+          "Price": 89
+        },
+        {
+          "Name": "Bluebell",
+          "Ratings": 3.7,
+          "Price": 245
+        },
+        {
+          "Name": "Arthur Vick",
+          "Ratings": 3.7,
+          "Price": 232
+        },
+        {
+          "Name": "Paradise Student",
+          "Ratings": 3.6,
+          "Price": 99
+        },
+        {
+          "Name": "Jack martin",
+          "Ratings": 3.6,
+          "Price": 208
+        },
+        {
+          "Name": "Rootes",
+          "Ratings": 3.6,
+          "Price": 123
+        },
+        {
+          "Name": "Claycroft",
+          "Ratings": 3.6,
+          "Price": 170
+        },
+        {
+          "Name": "Westwood",
+          "Ratings": 3.5,
+          "Price": 145
+        },
+        {
+          "Name": "Sherbourne",
+          "Ratings": 3.4,
+          "Price": 199
+        },
+        {
+          "Name": "Pillar Box",
+          "Ratings": 3.3,
+          "Price": 105
+        },
+        {
+          "Name": "MYAH",
+          "Ratings": 3.3,
+          "Price": 96
+        },
+        {
+          "Name": "Singer Hall",
+          "Ratings": 3.1,
+          "Price": 90
+        },
+        {
+          "Name": "Sky Blue",
+          "Ratings": 3.1,
+          "Price": 87
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 1373
+        }
+      ]
+    },
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "UniversityId": 12,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 12,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 12,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        }
+      ]
     }
   },
   {
     "Id": 8,
     "CityName": "Birmingham",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "Onyx",
+          "Ratings": 4.6,
+          "Price": 165
+        },
+        {
+          "Name": "Battery park",
+          "Ratings": 4.6,
+          "Price": 310
+        },
+        {
+          "Name": "Altura",
+          "Ratings": 4.5,
+          "Price": 187
+        },
+        {
+          "Name": "88 Bromsgrove House",
+          "Ratings": 4.5,
+          "Price": 225
+        },
+        {
+          "Name": "Athena Studios",
+          "Ratings": 4.4,
+          "Price": 294
+        },
+        {
+          "Name": "Globe Works",
+          "Ratings": 4.4,
+          "Price": 179
+        },
+        {
+          "Name": "Canvas The Old Fire Station",
+          "Ratings": 4.4,
+          "Price": 142
+        },
+        {
+          "Name": "Edge Apartments",
+          "Ratings": 4.3,
+          "Price": 293
+        },
+        {
+          "Name": "Chamberlain Place",
+          "Ratings": 4.3,
+          "Price": 214
+        },
+        {
+          "Name": "Staniforth House",
+          "Ratings": 4.3,
+          "Price": 183
+        },
+        {
+          "Name": "Brook Studios",
+          "Ratings": 4.2,
+          "Price": 289
+        },
+        {
+          "Name": "800 Bristol Road",
+          "Ratings": 4.2,
+          "Price": 289
+        },
+        {
+          "Name": "Toybox",
+          "Ratings": 4.2,
+          "Price": 229
+        },
+        {
+          "Name": "Emporium",
+          "Ratings": 4.2,
+          "Price": 196
+        },
+        {
+          "Name": "Oak Brook park ",
+          "Ratings": 4.2,
+          "Price": 223
+        },
+        {
+          "Name": "Lansdowne",
+          "Ratings": 4.2,
+          "Price": 1200
+        },
+        {
+          "Name": "Canvas Heights",
+          "Ratings": 4.2,
+          "Price": 157
+        },
+        {
+          "Name": "William Murdoch",
+          "Ratings": 4.1,
+          "Price": 158
+        },
+        {
+          "Name": "Compass",
+          "Ratings": 4.1,
+          "Price": 218
+        },
+        {
+          "Name": "Belgrave View",
+          "Ratings": 4.1,
+          "Price": 156
+        },
+        {
+          "Name": "Aitken",
+          "Ratings": 4,
+          "Price": 143
+        },
+        {
+          "Name": "Calthorpe",
+          "Ratings": 4,
+          "Price": 149
+        },
+        {
+          "Name": "Pritchatts",
+          "Ratings": 4,
+          "Price": 188
+        },
+        {
+          "Name": "Harriet Matineau",
+          "Ratings": 3.9,
+          "Price": 169
+        },
+        {
+          "Name": "Metalwoks",
+          "Ratings": 3.9,
+          "Price": 210
+        },
+        {
+          "Name": "Bagot",
+          "Ratings": 3.9,
+          "Price": 149
+        },
+        {
+          "Name": "Recording Rooms ",
+          "Ratings": 3.8,
+          "Price": 250
+        },
+        {
+          "Name": "Mary Sturge",
+          "Ratings": 3.8,
+          "Price": 174
+        },
+        {
+          "Name": "Shackleton",
+          "Ratings": 3.7,
+          "Price": 185
+        },
+        {
+          "Name": "Bentley",
+          "Ratings": 3.7,
+          "Price": 190
+        },
+        {
+          "Name": "James Watt",
+          "Ratings": 3.7,
+          "Price": 158
+        },
+        {
+          "Name": "Tennis ",
+          "Ratings": 3.6,
+          "Price": 140
+        },
+        {
+          "Name": "Maple ",
+          "Ratings": 3.6,
+          "Price": 99
+        },
+        {
+          "Name": "Selly Oak",
+          "Ratings": 3.6,
+          "Price": 195
+        },
+        {
+          "Name": "Canalside",
+          "Ratings": 3.6,
+          "Price": 139
+        },
+        {
+          "Name": "Jennens Court",
+          "Ratings": 3.6,
+          "Price": 175
+        },
+        {
+          "Name": "Ashcroft",
+          "Ratings": 3.6,
+          "Price": 132
+        },
+        {
+          "Name": "Lakeside",
+          "Ratings": 3.5,
+          "Price": 169
+        },
+        {
+          "Name": "B16",
+          "Ratings": 3.5,
+          "Price": 215
+        },
+        {
+          "Name": "Mason",
+          "Ratings": 3.5,
+          "Price": 194
+        },
+        {
+          "Name": "oakley",
+          "Ratings": 3.5,
+          "Price": 161
+        },
+        {
+          "Name": "Jarratt",
+          "Ratings": 3.5,
+          "Price": 181
+        },
+        {
+          "Name": "Elgar",
+          "Ratings": 3.5,
+          "Price": 184
+        },
+        {
+          "Name": "Iq Broderick",
+          "Ratings": 3.5,
+          "Price": 184
+        },
+        {
+          "Name": "beech",
+          "Ratings": 3.4,
+          "Price": 158
+        },
+        {
+          "Name": "Maltings",
+          "Ratings": 3.3,
+          "Price": 130
+        },
+        {
+          "Name": "Kensington",
+          "Ratings": 3.3,
+          "Price": 235
+        },
+        {
+          "Name": "Chamberlain Place",
+          "Ratings": 3.3,
+          "Price": 205
+        },
+        {
+          "Name": "Queens Hosp.",
+          "Ratings": 3.2,
+          "Price": 156
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 1451
+        }
+      ]
+    },
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "UniversityId": 13,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 13,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 28.74
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 15,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        }
+      ]
     }
   },
   {
     "Id": 9,
     "CityName": "York",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "Student Castle",
+          "Ratings": 4.6,
+          "Price": 190
+        },
+        {
+          "Name": "Foss",
+          "Ratings": 4.6,
+          "Price": 260
+        },
+        {
+          "Name": "Abode",
+          "Ratings": 4.3,
+          "Price": 222
+        },
+        {
+          "Name": "Sam Tuke",
+          "Ratings": 4.2,
+          "Price": 228
+        },
+        {
+          "Name": "Coal Yard",
+          "Ratings": 4.1,
+          "Price": 289
+        },
+        {
+          "Name": "Percys",
+          "Ratings": 4,
+          "Price": 210
+        },
+        {
+          "Name": "Boulevard",
+          "Ratings": 3.8,
+          "Price": 241
+        },
+        {
+          "Name": "Frederick",
+          "Ratings": 3.8,
+          "Price": 217
+        },
+        {
+          "Name": "Langwith",
+          "Ratings": 3.7,
+          "Price": 186
+        },
+        {
+          "Name": "Goodricke",
+          "Ratings": 3.7,
+          "Price": 172
+        },
+        {
+          "Name": "James ",
+          "Ratings": 3.7,
+          "Price": 220
+        },
+        {
+          "Name": "iQ Brickworks",
+          "Ratings": 3.6,
+          "Price": 301
+        },
+        {
+          "Name": "Derwent",
+          "Ratings": 3.6,
+          "Price": 187
+        },
+        {
+          "Name": "John Centrl",
+          "Ratings": 3.5,
+          "Price": 170
+        },
+        {
+          "Name": "Vanbrugh",
+          "Ratings": 3.5,
+          "Price": 148
+        },
+        {
+          "Name": "Alcuin",
+          "Ratings": 3.4,
+          "Price": 183
+        },
+        {
+          "Name": "Halifax",
+          "Ratings": 3.2,
+          "Price": 99
+        },
+        {
+          "Name": "Limes",
+          "Ratings": 3.2,
+          "Price": 125
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 1644
+        }
+      ]
+    },
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "UniversityId": 16,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 16,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 16,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 16,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 16,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury’s",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 17,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 17,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 17,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 17,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 17,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 17,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        }
+      ]
     }
   },
   {
     "Id": 10,
     "CityName": "Plymouth",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "Reservoir",
+          "Ratings": 4.4,
+          "Price": 205
+        },
+        {
+          "Name": "Mary Parker",
+          "Ratings": 4.4,
+          "Price": 145
+        },
+        {
+          "Name": "Saltwater",
+          "Ratings": 4.4,
+          "Price": 150
+        },
+        {
+          "Name": "Beckley",
+          "Ratings": 4.2,
+          "Price": 160
+        },
+        {
+          "Name": "St Augustine\u0027s House",
+          "Ratings": 4.1,
+          "Price": 175
+        },
+        {
+          "Name": "Old Dairy",
+          "Ratings": 4.1,
+          "Price": 175
+        },
+        {
+          "Name": "Treliske",
+          "Ratings": 4,
+          "Price": 153
+        },
+        {
+          "Name": "Plymouth Cross ",
+          "Ratings": 3.9,
+          "Price": 140
+        },
+        {
+          "Name": "iQ Astor",
+          "Ratings": 3.8,
+          "Price": 155
+        },
+        {
+          "Name": "Frobisher",
+          "Ratings": 3.8,
+          "Price": 129
+        },
+        {
+          "Name": "Gilwell",
+          "Ratings": 3.6,
+          "Price": 129
+        },
+        {
+          "Name": "Alexandra Works",
+          "Ratings": 3.5,
+          "Price": 117
+        },
+        {
+          "Name": "St Thomas",
+          "Ratings": 3.5,
+          "Price": 127
+        },
+        {
+          "Name": "Discovery Heights",
+          "Ratings": 3.5,
+          "Price": 144
+        },
+        {
+          "Name": "Robbins Hall",
+          "Ratings": 3.4,
+          "Price": 129
+        },
+        {
+          "Name": "Mary Newman Hall",
+          "Ratings": 3.4,
+          "Price": 199
+        },
+        {
+          "Name": "Central Point",
+          "Ratings": 3.4,
+          "Price": 135
+        },
+        {
+          "Name": "Radnor Hall",
+          "Ratings": 3.4,
+          "Price": 189
+        },
+        {
+          "Name": "Francis Drake",
+          "Ratings": 3.4,
+          "Price": 199
+        },
+        {
+          "Name": "Central Park",
+          "Ratings": 3.3,
+          "Price": 119
+        },
+        {
+          "Name": "Pilgrim",
+          "Ratings": 3.2,
+          "Price": 189
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 1345
+        }
+      ]
+    },
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "UniversityId": 18,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 18,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 18,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 18,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 18,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 18,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 19,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 19,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Asda",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Morrisons",
+          "AverageSupermarketCost": 27.47
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury’s",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        }
+      ]
+
     }
   },
   {
     "Id": 11,
     "CityName": "Norwich",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "Heathfield",
+          "Ratings": 4.4,
+          "Price": 527
+        },
+        {
+          "Name": "Pablo Fanque",
+          "Ratings": 4.2,
+          "Price": 169
+        },
+        {
+          "Name": "Crown Place",
+          "Ratings": 4.2,
+          "Price": 162
+        },
+        {
+          "Name": "Benedict\u0027s",
+          "Ratings": 4,
+          "Price": 165
+        },
+        {
+          "Name": "All Saints",
+          "Ratings": 3.8,
+          "Price": 175
+        },
+        {
+          "Name": "Nelson Court",
+          "Ratings": 3.6,
+          "Price": 134
+        },
+        {
+          "Name": "Yew House",
+          "Ratings": 3.6,
+          "Price": 173
+        },
+        {
+          "Name": "Elm House",
+          "Ratings": 3.5,
+          "Price": 173
+        },
+        {
+          "Name": "Paston",
+          "Ratings": 3.5,
+          "Price": 200
+        },
+        {
+          "Name": "Britten House",
+          "Ratings": 3.5,
+          "Price": 200
+        },
+        {
+          "Name": "Constable",
+          "Ratings": 3.5,
+          "Price": 134
+        },
+        {
+          "Name": "Victory",
+          "Ratings": 3.2,
+          "Price": 200
+        },
+        {
+          "Name": "Wolfson ",
+          "Ratings": 3.2,
+          "Price": 111
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 1446
+        }
+      ]
+    },
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "UniversityId": 20,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 20,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        }
+      ]
     }
   },
   {
     "Id": 12,
     "CityName": "Newcastle",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "St James ",
+          "Ratings": 4.5,
+          "Price": 280
+        },
+        {
+          "Name": "Newgate",
+          "Ratings": 4.5,
+          "Price": 185
+        },
+        {
+          "Name": "Albert Place",
+          "Ratings": 4.4,
+          "Price": 154
+        },
+        {
+          "Name": "Market Housee",
+          "Ratings": 4.4,
+          "Price": 165
+        },
+        {
+          "Name": "Roman House",
+          "Ratings": 4.4,
+          "Price": 140
+        },
+        {
+          "Name": "Plummer House",
+          "Ratings": 4.4,
+          "Price": 194
+        },
+        {
+          "Name": "Barker House",
+          "Ratings": 4.3,
+          "Price": 140
+        },
+        {
+          "Name": "Magnet Court",
+          "Ratings": 4.3,
+          "Price": 181
+        },
+        {
+          "Name": "Glassworks",
+          "Ratings": 4.3,
+          "Price": 159
+        },
+        {
+          "Name": "METROVICK",
+          "Ratings": 4.3,
+          "Price": 242
+        },
+        {
+          "Name": "Leazes Parade ",
+          "Ratings": 4.3,
+          "Price": 110
+        },
+        {
+          "Name": "The Bridge",
+          "Ratings": 4.3,
+          "Price": 180
+        },
+        {
+          "Name": "Quay Point",
+          "Ratings": 4.2,
+          "Price": 150
+        },
+        {
+          "Name": "Oxford House ",
+          "Ratings": 4.2,
+          "Price": 185
+        },
+        {
+          "Name": "The SHield",
+          "Ratings": 4.2,
+          "Price": 137
+        },
+        {
+          "Name": "Claremont",
+          "Ratings": 4.2,
+          "Price": 204
+        },
+        {
+          "Name": "Manor Bank",
+          "Ratings": 4.1,
+          "Price": 220
+        },
+        {
+          "Name": "Newcastle 1",
+          "Ratings": 4.1,
+          "Price": 192
+        },
+        {
+          "Name": "Foundry",
+          "Ratings": 4.1,
+          "Price": 140
+        },
+        {
+          "Name": "Quay Point Studios",
+          "Ratings": 4,
+          "Price": 189
+        },
+        {
+          "Name": "Knoll",
+          "Ratings": 4,
+          "Price": 189
+        },
+        {
+          "Name": "Byron Central",
+          "Ratings": 4,
+          "Price": 160
+        },
+        {
+          "Name": "Albion House",
+          "Ratings": 4,
+          "Price": 150
+        },
+        {
+          "Name": "Stepney Yard",
+          "Ratings": 4,
+          "Price": 234
+        },
+        {
+          "Name": "Quayside Court",
+          "Ratings": 3.9,
+          "Price": 136
+        },
+        {
+          "Name": "Garth Heads",
+          "Ratings": 3.9,
+          "Price": 109
+        },
+        {
+          "Name": "Portland Green ",
+          "Ratings": 3.8,
+          "Price": 155
+        },
+        {
+          "Name": "St James\u0027 Point",
+          "Ratings": 3.8,
+          "Price": 182
+        },
+        {
+          "Name": "Camden Court",
+          "Ratings": 3.7,
+          "Price": 173
+        },
+        {
+          "Name": "Windsor Terrace",
+          "Ratings": 3.7,
+          "Price": 130
+        },
+        {
+          "Name": "Park Terrace",
+          "Ratings": 3.6,
+          "Price": 172
+        },
+        {
+          "Name": "Park View ",
+          "Ratings": 3.6,
+          "Price": 179
+        },
+        {
+          "Name": "Verde",
+          "Ratings": 3.6,
+          "Price": 170
+        },
+        {
+          "Name": "Vita Student Strawberry",
+          "Ratings": 3.6,
+          "Price": 248
+        },
+        {
+          "Name": "Bowsden ",
+          "Ratings": 3.6,
+          "Price": 112
+        },
+        {
+          "Name": "View",
+          "Ratings": 3.6,
+          "Price": 185
+        },
+        {
+          "Name": "Winn",
+          "Ratings": 3.4,
+          "Price": 172
+        },
+        {
+          "Name": "New Bridge",
+          "Ratings": 3.4,
+          "Price": 172
+        },
+        {
+          "Name": "Glenamara ",
+          "Ratings": 3.4,
+          "Price": 122
+        },
+        {
+          "Name": "Trinity Square",
+          "Ratings": 3.3,
+          "Price": 164
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 1523
+        }
+      ]
+    },
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "UniversityId": 21,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 21,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 21,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 21,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        }
+      ]
     }
   },
   {
     "Id": 13,
     "CityName": "Cardiff",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "Adam St",
+          "Ratings": 4.6,
+          "Price": 175
+        },
+        {
+          "Name": "Cambrian Point",
+          "Ratings": 4.5,
+          "Price": 174
+        },
+        {
+          "Name": "Bridge St ",
+          "Ratings": 4.4,
+          "Price": 185
+        },
+        {
+          "Name": "Zenith",
+          "Ratings": 4.4,
+          "Price": 205
+        },
+        {
+          "Name": "Crown Place",
+          "Ratings": 4.4,
+          "Price": 184
+        },
+        {
+          "Name": "West Wing",
+          "Ratings": 4.4,
+          "Price": 180
+        },
+        {
+          "Name": "Severn Point",
+          "Ratings": 3.3,
+          "Price": 155
+        },
+        {
+          "Name": "Blackweir",
+          "Ratings": 4.3,
+          "Price": 157
+        },
+        {
+          "Name": "Bakery",
+          "Ratings": 4.3,
+          "Price": 124
+        },
+        {
+          "Name": "Clodien",
+          "Ratings": 4.2,
+          "Price": 165
+        },
+        {
+          "Name": "Ty Pont",
+          "Ratings": 4.2,
+          "Price": 159
+        },
+        {
+          "Name": "Eclipse",
+          "Ratings": 4.2,
+          "Price": 199
+        },
+        {
+          "Name": "Windsor House",
+          "Ratings": 4.1,
+          "Price": 187
+        },
+        {
+          "Name": "Canvas",
+          "Ratings": 4,
+          "Price": 203
+        },
+        {
+          "Name": "Fitzalan",
+          "Ratings": 4,
+          "Price": 170
+        },
+        {
+          "Name": "North Court",
+          "Ratings": 4,
+          "Price": 219
+        },
+        {
+          "Name": "Lumis Cardiff",
+          "Ratings": 4,
+          "Price": 182
+        },
+        {
+          "Name": "Howard Gardens",
+          "Ratings": 4,
+          "Price": 181
+        },
+        {
+          "Name": "Glendower",
+          "Ratings": 3.9,
+          "Price": 195
+        },
+        {
+          "Name": "Arofan",
+          "Ratings": 3.8,
+          "Price": 194
+        },
+        {
+          "Name": "Aberdare",
+          "Ratings": 3.7,
+          "Price": 130
+        },
+        {
+          "Name": "Livin",
+          "Ratings": 3.7,
+          "Price": 195
+        },
+        {
+          "Name": "Northgate",
+          "Ratings": 3.7,
+          "Price": 170
+        },
+        {
+          "Name": "City Heights",
+          "Ratings": 3.6,
+          "Price": 225
+        },
+        {
+          "Name": "Taybont ",
+          "Ratings": 3.5,
+          "Price": 149
+        },
+        {
+          "Name": "Senghennydd",
+          "Ratings": 3.5,
+          "Price": 130
+        },
+        {
+          "Name": "Roy Jenkins",
+          "Ratings": 3.5,
+          "Price": 130
+        },
+        {
+          "Name": "Summit",
+          "Ratings": 3.5,
+          "Price": 219
+        },
+        {
+          "Name": "Taylbont",
+          "Ratings": 3.5,
+          "Price": 153
+        },
+        {
+          "Name": "Gordon",
+          "Ratings": 3.5,
+          "Price": 147
+        },
+        {
+          "Name": "Cyncoed ",
+          "Ratings": 3.5,
+          "Price": 148
+        },
+        {
+          "Name": "Colum H",
+          "Ratings": 3.4,
+          "Price": 151
+        },
+        {
+          "Name": "Aberconway",
+          "Ratings": 3.5,
+          "Price": 141
+        },
+        {
+          "Name": "Cartwright",
+          "Ratings": 3.3,
+          "Price": 130
+        },
+        {
+          "Name": "Uni Hall ",
+          "Ratings": 3.2,
+          "Price": 130
+        },
+        {
+          "Name": "Talybont North",
+          "Ratings": 3.2,
+          "Price": 130
+        },
+        {
+          "Name": "Plas Gwyn ",
+          "Ratings": 3,
+          "Price": 148
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 1450
+        }
+      ]
+    },
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "UniversityId": 22,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 22,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 22,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 22,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        }
+      ]
     }
   },
   {
     "Id": 14,
     "CityName": "Edinburgh",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "Silk Mill",
+          "Ratings": 4.8,
+          "Price": 230
+        },
+        {
+          "Name": "Goods Corner",
+          "Ratings": 4.8,
+          "Price": 265
+        },
+        {
+          "Name": "Straits",
+          "Ratings": 4.6,
+          "Price": 214
+        },
+        {
+          "Name": "200 Cowgate",
+          "Ratings": 4.6,
+          "Price": 208
+        },
+        {
+          "Name": "Keel House ",
+          "Ratings": 4.5,
+          "Price": 330
+        },
+        {
+          "Name": "Kings Stables",
+          "Ratings": 4.4,
+          "Price": 356
+        },
+        {
+          "Name": "Haddington",
+          "Ratings": 4.4,
+          "Price": 205
+        },
+        {
+          "Name": "Mayfield",
+          "Ratings": 4.3,
+          "Price": 319
+        },
+        {
+          "Name": "Mill House",
+          "Ratings": 4.3,
+          "Price": 205
+        },
+        {
+          "Name": "Lady Nicolson",
+          "Ratings": 4.2,
+          "Price": 449
+        },
+        {
+          "Name": "Huxley",
+          "Ratings": 4.2,
+          "Price": 290
+        },
+        {
+          "Name": "8 Roxburgh",
+          "Ratings": 4.2,
+          "Price": 205
+        },
+        {
+          "Name": "McDonald Road",
+          "Ratings": 4.2,
+          "Price": 220
+        },
+        {
+          "Name": "Sugarhouse",
+          "Ratings": 4.2,
+          "Price": 265
+        },
+        {
+          "Name": "Gateway",
+          "Ratings": 4.1,
+          "Price": 230
+        },
+        {
+          "Name": "Beaverbank",
+          "Ratings": 4.1,
+          "Price": 209
+        },
+        {
+          "Name": "Buccleuch",
+          "Ratings": 4,
+          "Price": 309
+        },
+        {
+          "Name": "Edinburgh College",
+          "Ratings": 4,
+          "Price": 204
+        },
+        {
+          "Name": "Shrubhill",
+          "Ratings": 4,
+          "Price": 335
+        },
+        {
+          "Name": "28 \u0026 34 Wrights",
+          "Ratings": 4,
+          "Price": 388
+        },
+        {
+          "Name": "Canal",
+          "Ratings": 3.9,
+          "Price": 221
+        },
+        {
+          "Name": "Haymarket",
+          "Ratings": 3.9,
+          "Price": 210
+        },
+        {
+          "Name": "Panmure",
+          "Ratings": 3.8,
+          "Price": 351
+        },
+        {
+          "Name": "Murano",
+          "Ratings": 3.7,
+          "Price": 325
+        },
+        {
+          "Name": "New Park",
+          "Ratings": 3.7,
+          "Price": 226
+        },
+        {
+          "Name": "Salisbury",
+          "Ratings": 3.7,
+          "Price": 365
+        },
+        {
+          "Name": "Arran",
+          "Ratings": 3.7,
+          "Price": 206
+        },
+        {
+          "Name": "Old Printworks",
+          "Ratings": 3.7,
+          "Price": 275
+        },
+        {
+          "Name": "Meadow ",
+          "Ratings": 3.6,
+          "Price": 222
+        },
+        {
+          "Name": "Portsburgh",
+          "Ratings": 3.6,
+          "Price": 292
+        },
+        {
+          "Name": "Bridge House",
+          "Ratings": 3.5,
+          "Price": 199
+        },
+        {
+          "Name": "Darroch",
+          "Ratings": 3.5,
+          "Price": 102
+        },
+        {
+          "Name": "iQ Fountainbridge",
+          "Ratings": 3.5,
+          "Price": 243
+        },
+        {
+          "Name": "Kincaid\u0027s Court",
+          "Ratings": 3.5,
+          "Price": 179
+        },
+        {
+          "Name": "Edb Camps",
+          "Ratings": 3.3,
+          "Price": 175
+        },
+        {
+          "Name": "Riego",
+          "Ratings": 3.2,
+          "Price": 240
+        },
+        {
+          "Name": "Sciennes",
+          "Ratings": 3.2,
+          "Price": 141
+        },
+        {
+          "Name": "Deaconess",
+          "Ratings": 3,
+          "Price": 211
+        },
+        {
+          "Name": "Morgan",
+          "Ratings": 3,
+          "Price": 196
+        },
+        {
+          "Name": "Bainfield",
+          "Ratings": 2.9,
+          "Price": 190
+        },
+        {
+          "Name": "O\u0027Shea",
+          "Ratings": 2.9,
+          "Price": 219
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 2657
+        }
+      ]
+    },
     "Jobs": {
       "MedianWage": 12.75,
       "EmploymentRate": 0.75,
       "UnemploymentRate": 0.25,
-      "PartTimeJobPostings": "200+"
+      "PartTimeJobPostings": "200\u002B"
     },
     "Entertainment": {
       "GoingOut": 37,
       "HealthAndWellness": 30,
       "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": [
+        {
+          "UniversityId": 23,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 23,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 23,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 23,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 23,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 23,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 23,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 23,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 23,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 23,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Sainsbury's",
+          "AverageSupermarketCost": 25.87
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Aldi",
+          "AverageSupermarketCost": 25.28
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Lidl",
+          "AverageSupermarketCost": 25.80
+        },
+        {
+          "UniversityId": 0,
+          "NearestSupermarket": "Tesco",
+          "AverageSupermarketCost": 25.73
+        }
+      ]
+    }
+  },
+  {
+    "Id": 15,
+    "CityName": "Belfast",
+    "Accommodations": {
+      "Halls": [
+        {
+          "Name": "LIV Student",
+          "Ratings": 4.7,
+          "Price": 170
+        },
+        {
+          "Name": "The Edge",
+          "Ratings": 4.7,
+          "Price": 149
+        },
+        {
+          "Name": "Bradbury ",
+          "Ratings": 4.3,
+          "Price": 185
+        },
+        {
+          "Name": "Botanic",
+          "Ratings": 4.3,
+          "Price": 195
+        },
+        {
+          "Name": "Swanston ",
+          "Ratings": 4.3,
+          "Price": 171
+        },
+        {
+          "Name": "Great Patrick",
+          "Ratings": 4.2,
+          "Price": 143
+        },
+        {
+          "Name": "John Bell",
+          "Ratings": 4.2,
+          "Price": 181
+        },
+        {
+          "Name": "Alma Place ",
+          "Ratings": 4,
+          "Price": 156
+        },
+        {
+          "Name": "123 York St ",
+          "Ratings": 3.9,
+          "Price": 150
+        },
+        {
+          "Name": "Little Patrick",
+          "Ratings": 3.8,
+          "Price": 135
+        },
+        {
+          "Name": "Aster ",
+          "Ratings": 3.7,
+          "Price": 185
+        },
+        {
+          "Name": "Elms BT9",
+          "Ratings": 3.6,
+          "Price": 110
+        },
+        {
+          "Name": "Dalriado ",
+          "Ratings": 3.3,
+          "Price": 160
+        }
+      ],
+      "Houses": [
+        {
+          "AvePerMonth": 0
+        }
+      ]
+    },
+    "Jobs": {
+      "MedianWage": 12.75,
+      "EmploymentRate": 0.75,
+      "UnemploymentRate": 0.25,
+      "PartTimeJobPostings": "200\u002B"
+    },
+    "Entertainment": {
+      "GoingOut": 37,
+      "HealthAndWellness": 30,
+      "HolidayAndEvents": 33
+    },
+    "Groceries": {
+      "Accommodations": []
     }
   }
 ]

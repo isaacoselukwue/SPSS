@@ -27,6 +27,7 @@ public class City
 {
     public int Id { get; set; }
     public string CityName { get; set; } = string.Empty;
+    public AccommodationsInfo? Accommodations { get; set; }
     public JobsInfo? Jobs { get; set; }
     public EntertainmentInfo? Entertainment { get; set; }
     public GroceriesInfo? Groceries { get; set; }
@@ -45,4 +46,21 @@ public class EntertainmentInfo
     public decimal GoingOut { get; set; }
     public decimal HealthAndWellness { get; set; }
     public decimal HolidayAndEvents { get; set; }
+}
+public class AccommodationsInfo
+{
+    public List<HallInfo>? Halls { get; set; }
+    public List<HouseInfo>? Houses { get; set; }
+}
+
+public class HallInfo
+{
+    public string Name { get; set; } = string.Empty;
+    public decimal Price { get; set; }
+    public decimal Ratings { get; set; }
+}
+
+public class HouseInfo
+{
+    public decimal AvePerMonth { get; set; }
 }
