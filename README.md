@@ -1,15 +1,15 @@
 # SPSS - University Cost Comparison
 
-**SPSS - University Cost Comparison** is a web application that helps students compare the cost of attending different universities in the UK. This tool provides comprehensive cost breakdowns including accommodation, groceries, and entertainment expenses to help students make informed decisions.
+**SPSS - University and City Cost Comparison** is a web application that helps students compare the cost of living in different university cities across the UK. This tool provides comprehensive cost breakdowns including accommodation, groceries, and entertainment expenses to help students make informed decisions about where to study.
 
 ## Features
 
-- **University Search:** Find universities by name or city.
-- **Cost Comparison:** Compare up to 3 universities side by side.
+- **City Search:** Find cities by name or browse all available options.
+- **City Comparison:** Compare up to 3 cities side by side.
 - **Cost Breakdown:** View detailed weekly expenses for accommodations, groceries, and entertainment.
-- **Duration Selection:** Calculate costs for the standard academic year (44 weeks) or the full year (51 weeks).
+- **Accommodation Details:** Get information about both university halls and private housing options.
+- **University Information:** See university-specific data within each city, including nearby supermarkets and costs.
 - **Employment Information:** View available student jobs, median wages, and employment rates.
-- **Accommodation Details:** Get information about both university-owned and private accommodations.
 
 ## Technology Stack
 
@@ -48,12 +48,12 @@
     https://localhost:5001
 
 ## Usage
-1. **Type a university name or city in the search box**
-2. **Select a university from the search results**
-3. **Add up to 3 universities to compare**
-4. **Choose between 44-week or 51-week duration**
-5. **Review the cost breakdown and total expenses**
-6. **Click "Visit University Website" to learn more about a specific institution**
+1. **Type a city name in the search box**
+2. **Select a city from the search results**
+3. **View detailed cost information for the selected city**
+4. **Add up to 3 cities to compare using the "Compare with other cities" button**
+5. **Review the cost breakdown and housing options**
+6. **View university-specific information within each city**
 
 ## Data Sources
 The application uses local JSON data files for university and city information. These files can be found in the `wwwroot/data/` directory.
