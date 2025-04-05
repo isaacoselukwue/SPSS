@@ -64,7 +64,42 @@
                                 </div>
                             </div>
                         </div>
-                        
+
+                        <div class="alert alert-info mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <h4 class="alert-heading mb-3">Cost Summary</h4>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="mb-1"><strong>Weekly Cost:</strong> £@(GetWeeklyTotalCost(selectedCity).ToString("F2"))</p>
+                                            <p class="mb-1"><strong>Annual Cost:</strong> £@(GetAnnualTotalCost(selectedCity).ToString("N2"))</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            @{
+                                                var validCities = allCities.Count(c => GetWeeklyTotalCost(c) > 0);
+                                                var cityRank = GetCityRankByTotalCost(selectedCity);
+                                            }
+                                            <p class="mb-1"><strong>Cost Ranking:</strong> @GetCostRankText(cityRank, validCities)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="position-relative pt-2">
+                                        <div class="progress" style="height: 20px;">
+                                            <div class="progress-bar @(cityRank <= validCities/3 ? "bg-success" : cityRank <= 2*validCities/3 ? "bg-warning" : "bg-danger")"
+                                                 role="progressbar"
+                                                 style="width: @(100 * cityRank / Math.Max(1, validCities))%;"
+                                                 aria-valuenow="@cityRank"
+                                                 aria-valuemin="1"
+                                                 aria-valuemax="@validCities">
+                                            </div>
+                                        </div>
+                                        <small class="d-block mt-1">Lower rank = more affordable</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="card-body">
                             @if (selectedCity.Accommodations is not null)
                             {
@@ -211,13 +246,16 @@
                                 <h4 class="border-bottom pb-2 mt-4">Entertainment</h4>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <p><strong>Going Out:</strong> £@selectedCity.Entertainment.GoingOut.ToString("F2")/week</p>
+                                        <p><strong>Going Out:</strong> £@((selectedCity.Entertainment.GoingOut/4).ToString("F2"))/week</p>
                                     </div>
                                     <div class="col-md-4">
-                                        <p><strong>Health & Wellness:</strong> £@selectedCity.Entertainment.HealthAndWellness.ToString("F2")/week</p>
+                                        <p><strong>Holidays & Events:</strong> £@((selectedCity.Entertainment.HolidayAndEvents/4).ToString("F2"))/week</p>
                                     </div>
                                     <div class="col-md-4">
-                                        <p><strong>Holidays & Events:</strong> £@selectedCity.Entertainment.HolidayAndEvents.ToString("F2")/week</p>
+                                        <p><strong>Clubs & Societies:</strong> £@((selectedCity.Entertainment.ClubsAndSocieties/52).ToString("F2"))/week</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p><strong>Cinema Tickets:</strong> £@((selectedCity.Entertainment.CinemaTickets/4).ToString("F2"))/week</p>
                                     </div>
                                 </div>
                                 <p><strong>Total Entertainment Cost:</strong> £@GetTotalEntertainmentCost(selectedCity).ToString("F2")/week</p>
@@ -244,6 +282,30 @@
                     </div>
                 </div>
 
+                <div class="row mt-4 mb-3">
+                    <div class="col-12">
+                        <div class="card bg-light">
+                            <div class="card-body py-2">
+                                <h5 class="mb-0 text-center">Cost Comparison Summary</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    @foreach (var city in selectedCities)
+                    {
+                        <div class="col-md-@(12 / Math.Max(1, Math.Min(selectedCities.Count, 3)))">
+                            <div class="card bg-light">
+                                <div class="card-body text-center">
+                                    <h5 class="mb-2">£@(GetWeeklyTotalCost(city).ToString("F2"))/week</h5>
+                                    <p class="small mb-0">Rank: @GetCityRankByTotalCost(city) of @allCities.Count(c => GetWeeklyTotalCost(c) > 0)</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
                 @foreach (var city in selectedCities)
                 {
                     <div class="col-md-@(12 / Math.Max(1, Math.Min(selectedCities.Count, 3)))">
@@ -252,7 +314,7 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h5 class="m-0">@city.CityName</h5>
                                     <button class="btn btn-sm btn-outline-light"
-                                            @onclick="() => RemoveCity(city)">
+                                    @onclick="() => RemoveCity(city)">
                                         <i class="bi bi-x-lg"></i>
                                     </button>
                                 </div>
@@ -299,6 +361,15 @@
                                     <p class="mb-1"><strong>Student Jobs:</strong> @(city.Jobs.PartTimeJobPostings ?? "Data not available")</p>
                                     <p class="mb-1"><strong>Median Wage:</strong> £@(city.Jobs.MedianWage)/hour</p>
                                 }
+
+                                <h6 class="border-bottom pb-2 mt-3">Total Costs</h6>
+                                <p class="mb-1"><strong>Weekly Total:</strong> £@(GetWeeklyTotalCost(city).ToString("F2"))</p>
+                                <p class="mb-1"><strong>Annual Total:</strong> £@(GetAnnualTotalCost(city).ToString("N2"))</p>
+                                @{
+                                    var validCities = allCities.Count(c => GetWeeklyTotalCost(c) > 0);
+                                    var cityRank = GetCityRankByTotalCost(city);
+                                }
+                                <p class="mb-1"><strong>Cost Ranking:</strong> @GetCostRankText(cityRank, validCities)</p>
                             </div>
                             <div class="card-footer">
                                 <button class="btn btn-outline-primary w-100" @onclick="() => ViewFullDetails(city)">
@@ -554,7 +625,7 @@
         if (city.Entertainment is null)
             return 0;
 
-        return city.Entertainment.GoingOut + city.Entertainment.HealthAndWellness + city.Entertainment.HolidayAndEvents;
+        return (city.Entertainment.GoingOut / 4) + (city.Entertainment.CinemaTickets / 4) + (city.Entertainment.HolidayAndEvents / 4) + (city.Entertainment.ClubsAndSocieties / 52);
     }
 
     private List<AccommodationInfo> GetRelevantAccommodations(University university, City city)
@@ -598,9 +669,11 @@
             return "0.00";
 
         decimal total = 0;
-        if (city.Entertainment.GoingOut > 0) total += city.Entertainment.GoingOut;
-        if (city.Entertainment.HealthAndWellness > 0) total += city.Entertainment.HealthAndWellness;
-        if (city.Entertainment.HolidayAndEvents > 0) total += city.Entertainment.HolidayAndEvents;
+
+        if (city.Entertainment.GoingOut > 0) total += (city.Entertainment.GoingOut / 4);
+        if (city.Entertainment.CinemaTickets > 0) total += (city.Entertainment.CinemaTickets / 4);
+        if (city.Entertainment.HolidayAndEvents > 0) total += (city.Entertainment.HolidayAndEvents / 4);
+        if (city.Entertainment.ClubsAndSocieties > 0) total += (city.Entertainment.ClubsAndSocieties / 52);
 
         return total.ToString("F2");
     }
@@ -634,5 +707,56 @@
         cityComparisonMode = true;
         selectedCity = null;
         isAddingToComparison = true;
+    }
+
+    private decimal GetWeeklyTotalCost(City city)
+    {
+        decimal accommodationCost = 0;
+
+        decimal hallsCost = GetAverageHallPrice(city);
+        decimal houseCost = 0;
+
+        if (city.Accommodations?.Houses?.Any() == true)
+        {
+            houseCost = city.Accommodations.Houses.Average(h => h.AvePerMonth) * 12 / 52;
+        }
+
+        if (hallsCost > 0 && houseCost > 0)
+        {
+            accommodationCost = Math.Min(hallsCost, houseCost);
+        }
+        else
+        {
+            accommodationCost = Math.Max(hallsCost, houseCost);
+        }
+
+        decimal groceryCost = GetAverageGroceryCost(city);
+        decimal entertainmentCost = GetTotalEntertainmentCost(city);
+
+        return accommodationCost + groceryCost + entertainmentCost;
+    }
+
+    private decimal GetAnnualTotalCost(City city) => GetWeeklyTotalCost(city) * 52;
+
+    private int GetCityRankByTotalCost(City city)
+    {
+        var citiesWithCosts = allCities
+            .Where(c => GetWeeklyTotalCost(c) > 0)
+            .OrderBy(c => GetWeeklyTotalCost(c))
+            .ToList();
+
+        return citiesWithCosts.FindIndex(c => c.Id == city.Id) + 1;
+    }
+
+    private string GetCostRankText(int rank, int total)
+    {
+        if (rank <= 0 || total <= 0) return "Ranking unavailable";
+
+        if (rank <= total / 3)
+            return $"{rank}/{total} (Low cost)";
+        else if (rank <= 2 * total / 3)
+            return $"{rank}/{total} (Medium cost)";
+        else
+            return $"{rank}/{total} (High cost)";
     }
 }

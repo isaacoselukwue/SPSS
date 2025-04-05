@@ -44,8 +44,9 @@ public class JobsInfo
 public class EntertainmentInfo
 {
     public decimal GoingOut { get; set; }
-    public decimal HealthAndWellness { get; set; }
     public decimal HolidayAndEvents { get; set; }
+    public decimal ClubsAndSocieties { get; set; }
+    public decimal CinemaTickets { get; set; }
 }
 public class AccommodationsInfo
 {
